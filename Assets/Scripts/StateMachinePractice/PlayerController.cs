@@ -21,3 +21,4 @@ public class PlayerController : MonoBehaviour
         _stateMachine.SetInitialState(new IdleState(gameObject)); // 초기 상태 설정
     }
 }
+
