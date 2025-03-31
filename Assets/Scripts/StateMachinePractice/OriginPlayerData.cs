@@ -1,84 +1,27 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerScript : MonoBehaviour
+public class Origin : MonoBehaviour
 {
-    [Header("Player Stats")]
-    [SerializeField] private int hp;
-    [SerializeField] private float speed;
-    [SerializeField] private float maxEnergy;
-    [SerializeField] private float jumpPower;
-    [SerializeField] private float dashPower;
 
-
-    [Header("Utilities")]
-    [SerializeField] private float dashEnergy;
-    [SerializeField] private float dashCoolTime;
-    [SerializeField] private float dashDurationTime;
-    [SerializeField] private float guardEnergy;
-    [SerializeField] private float guardDurationTime;
-    [SerializeField] private float energyHealAmount;
-    [SerializeField] private float healTime;
-    [SerializeField] private float attackDurationTime;
-
-    public Image[] hearts;
-    public Image energyBar;
-    public GameObject guard;
-    public GameObject counterPrefab;
-    public GameObject attackRange;
-
-
-    private float energy;
-    private float inputX;
-    private float xVelocity;
-
-    [SerializeField] private bool isGrounded;
-    [SerializeField] private bool isDashingPossible;
-    [SerializeField] private bool isHealing;
-    [SerializeField] private bool isGuarding;
-    [SerializeField] private bool isAlive;
-
-    SpriteRenderer spriteRenderer;
-    Rigidbody2D rigidBody;
-    Animator animator;
 
 
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        rigidBody = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-
-        energy = maxEnergy;
-
-        InitializeFlags();
-
-        UpdateHearts();
-
         StartCoroutine(IdleState());
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
-        
-        if (Input.GetKeyDown(KeyCode.Mouse1) && isAlive) Guard();
+        if (Input.GetKeyDown(KeyCode.Mouse1)) Guard();
 
         UpdateEnergyBar();
 
-        if (Input.GetKeyDown(KeyCode.Alpha4) && isAlive) TakeDamage();
-
+        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
     }
 
-    private void InitializeFlags()
-    {
-        isDashingPossible = true;
-        isGrounded = true;
-        isHealing = false;
-        isGuarding = false;
-        isAlive = true;
-    }
+
 
     private IEnumerator IdleState()
     {
@@ -151,6 +94,8 @@ public class PlayerScript : MonoBehaviour
             yield return null;
         }
     }
+
+
 
     private IEnumerator JumpState()
     {
@@ -230,7 +175,7 @@ public class PlayerScript : MonoBehaviour
         while (isHealing && healTimer > 0)
         {
             if (Input.GetKeyUp(KeyCode.W)) isHealing = false;
-            else if(Input.GetKeyDown(KeyCode.LeftShift) && isDashingPossible && energy >= dashEnergy)
+            else if (Input.GetKeyDown(KeyCode.LeftShift) && isDashingPossible && energy >= dashEnergy)
             {
                 StartCoroutine(DashState());
                 break;
@@ -298,20 +243,7 @@ public class PlayerScript : MonoBehaviour
         StartCoroutine(IdleState());
     }
 
-    private IEnumerator DeadState()
-    {
-        Debug.Log("Dead");
-        isAlive = false;
-        animator.SetBool("isDead", true);
-        yield return null;
-        animator.SetBool("isDead", false);
-    }
 
-    private void UpdateHearts()
-    {
-        foreach (Image sprite in hearts) sprite.gameObject.SetActive(false);
-        for (int i = 0; i < hp; i++) hearts[i].gameObject.SetActive(true);
-    }
 
     private void UpdateEnergyBar()
     {
@@ -324,11 +256,6 @@ public class PlayerScript : MonoBehaviour
     {
         hp -= damage;
         UpdateHearts();
-        if (hp <= 0 && isAlive)
-        {
-            StopAllCoroutines();
-            StartCoroutine(DeadState());
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -340,3 +267,5 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground")) isGrounded = false;
     }
 }
+
+*/

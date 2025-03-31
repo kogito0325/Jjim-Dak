@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 /*IState 인터페이스:
 
 Enter(): 상태가 시작될 때 호출됩니다. 필요한 초기화 작업을 수행합니다.

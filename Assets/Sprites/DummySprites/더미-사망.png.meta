@@ -142,8 +142,8 @@ TextureImporter:
         y: 622
         width: 229
         height: 488
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.6, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -164,8 +164,8 @@ TextureImporter:
         y: 622
         width: 229
         height: 457
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.46, y: 0.53}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -186,8 +186,8 @@ TextureImporter:
         y: 22
         width: 330
         height: 426
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.34, y: 0.58}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -208,8 +208,8 @@ TextureImporter:
         y: 9
         width: 476
         height: 229
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.22, y: 1.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -226,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f2af0f3458df02f40936c454ebcde9a9
     internalID: 0
     vertices: []
     indices: 
@@ -240,6 +240,7 @@ TextureImporter:
       "\uB354\uBBF8-\uC0AC\uB9DD_1": -758319809451312246
       "\uB354\uBBF8-\uC0AC\uB9DD_2": 6661972499321566460
       "\uB354\uBBF8-\uC0AC\uB9DD_3": 3785838802692150860
+      "\uB354\uBBF8-\uC0AC\uB9DD_4": -1617222098
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
