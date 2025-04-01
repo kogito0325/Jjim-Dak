@@ -26,7 +26,9 @@ public class PlayerScript : MonoBehaviour
     public Image energyBar;
     public GameObject guard;
     public GameObject counterPrefab;
-    public GameObject attackRange;
+    public GameObject attackRangeRight;
+    public GameObject attackRangeLeft;
+    public SpriteRenderer healEffect;
 
 
     private float energy;
@@ -46,6 +48,7 @@ public class PlayerScript : MonoBehaviour
 
     private void Start()
     {
+        //Time.timeScale = 0.1f;
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -68,7 +71,8 @@ public class PlayerScript : MonoBehaviour
         UpdateEnergyBar();
 
         if (Input.GetKeyDown(KeyCode.Alpha4) && isAlive) TakeDamage();
-
+        animator.SetFloat("yVelocity", rigidBody.linearVelocityY);
+        healEffect.flipX = spriteRenderer.flipX;
     }
 
     private void InitializeFlags()
@@ -82,7 +86,6 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator IdleState()
     {
-        Debug.Log("Idle");
         animator.SetBool("isMoving", false);
         while (true)
         {
@@ -106,7 +109,7 @@ public class PlayerScript : MonoBehaviour
                 StartCoroutine(DashState());
                 break;
             }
-            if (Input.GetKeyDown(KeyCode.W) && !isHealing)
+            if (Input.GetKeyDown(KeyCode.W) && !isHealing && hp < 5)
             {
                 StartCoroutine(HealState());
                 break;
@@ -122,10 +125,9 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator MoveState()
     {
-        Debug.Log("Move");
-        animator.SetBool("isMoving", true);
         while (true)
         {
+            if(isGrounded) animator.SetBool("isMoving", true);
             inputX = Input.GetAxisRaw("Horizontal");
             xVelocity = inputX * speed;
 
@@ -154,9 +156,10 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator JumpState()
     {
-        Debug.Log("Jump");
         isGrounded = false;
         rigidBody.linearVelocityY = jumpPower;
+        animator.SetBool("isJumping", true);
+        animator.SetBool("isMoving", false);
         while (!isGrounded)
         {
             if (Input.GetAxisRaw("Horizontal") != 0)
@@ -178,9 +181,10 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator AttackState()
     {
-        Debug.Log("Attack");
-        animator.SetBool("isAttackStarted", true);
-        attackRange.SetActive(true);
+        //animator.SetBool("isAttackStarted", true);
+        GameObject tempObj = spriteRenderer.flipX ? attackRangeLeft : attackRangeRight;
+        tempObj.SetActive(true);
+
         float attackTimer = attackDurationTime;
         bool isAttackContinuing = false;
         yield return null;
@@ -195,21 +199,19 @@ public class PlayerScript : MonoBehaviour
         }
         if (isAttackContinuing)
         {
-            Debug.Log("Attack2");
-            animator.SetBool("isAttacking", true);
-            attackRange.SetActive(true);
+            //animator.SetBool("isAttacking", true);
+            tempObj.SetActive(true);
         }
         yield return new WaitForSeconds(attackDurationTime);
-        animator.SetBool("isAttackStarted", false);
-        animator.SetBool("isAttacking", false);
-        attackRange.SetActive(false);
+        //animator.SetBool("isAttackStarted", false);
+        //animator.SetBool("isAttacking", false);
+        tempObj.SetActive(false);
         StartCoroutine(IdleState());
     }
 
 
     private IEnumerator DashState()
     {
-        Debug.Log("Dash");
         isDashingPossible = false;
         if (inputX == 0) inputX = spriteRenderer.flipX ? -1 : 1;
         energy -= dashEnergy;
@@ -223,9 +225,10 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator HealState()
     {
-        Debug.Log("Heal");
         isHealing = true;
         float healTimer = healTime;
+
+        animator.SetBool("isHealing", true);
 
         while (isHealing && healTimer > 0)
         {
@@ -243,6 +246,7 @@ public class PlayerScript : MonoBehaviour
         if (healTimer <= 0)
         {
             hp += 1;
+            UpdateHearts();
             Debug.Log("Healing Success");
         }
         else
@@ -250,6 +254,7 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("Healing Cancled");
         }
         StartCoroutine(IdleState());
+        animator.SetBool("isHealing", false);
         isHealing = false;
     }
 
@@ -265,7 +270,6 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator GuardSequence()
     {
-        Debug.Log("Guard");
         isGuarding = true;
         guard.SetActive(true);
         int oldHp = hp;
@@ -292,7 +296,6 @@ public class PlayerScript : MonoBehaviour
 
     private void CounterAttack()
     {
-        Debug.Log("Counter");
         Instantiate(counterPrefab, transform.position, Quaternion.identity);
         InitializeFlags();
         StartCoroutine(IdleState());
@@ -333,10 +336,30 @@ public class PlayerScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground")) isGrounded = true;
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            animator.SetBool("isJumping", false);
+        }
+        else if (collision.gameObject.CompareTag("Boss"))
+        {
+            TakeDamage();
+        }
+        else if (collision.gameObject.CompareTag("BossAtk"))
+        {
+            collision.gameObject.SetActive(false);
+            TakeDamage();
+        }
+        
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground")) isGrounded = false;
+
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Boss")) return;
     }
 }
