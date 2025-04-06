@@ -17,9 +17,9 @@ public class BossScript : MonoBehaviour
     float actionBreakTime;
     int dashCount;
 
-    public GameObject attackRangeLeft;
-    public GameObject attackRangeRight;
+    public GameObject attackRange;
     public Image hpBar;
+    public SpriteRenderer backGround;
 
     Animator animator;
     Rigidbody2D rigid;
@@ -63,23 +63,13 @@ public class BossScript : MonoBehaviour
         switch (dashCount)
         {
             case 2:
-                if (lookDir == Dir.Left)
-                {
-                    rigid.linearVelocityX = -dashSpeed;
-                    attackRangeLeft.SetActive(true);
-                }
-                else
-                {
-                    rigid.linearVelocityX = dashSpeed;
-                    attackRangeRight.SetActive(true);
-                }
+                rigid.linearVelocityX = lookDir == Dir.Left ? -dashSpeed : dashSpeed;
+                attackRange.SetActive(true);
                 break;
             case 3:
                 rigid.linearVelocityX = 0;
-                attackRangeLeft.SetActive(false);
-                attackRangeRight.SetActive(false);
+                attackRange.SetActive(false);
                 dashCount = 0;
-                LockOn();
                 actionBreakTime = actionTerm;
                 break;
             default:
@@ -102,7 +92,7 @@ public class BossScript : MonoBehaviour
     }
     private void UpdateLookDireciton()
     {
-        sprRend.flipX = lookDir == Dir.Right;
+        transform.rotation = Quaternion.Euler(Vector3.up * (lookDir == Dir.Left ? 0 : 180));
     }
     private void Die()
     {
@@ -118,11 +108,11 @@ public class BossScript : MonoBehaviour
     private void UpdateHpBar()
     {
         hpBar.fillAmount = (float)hp / maxHp;
+        backGround.color = new Color(1f, 1f, 1f, (float)hp / maxHp);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("inTrigger");
         if (collision.gameObject.CompareTag("PlayerAtk"))
         {
             Debug.Log("BossHit");

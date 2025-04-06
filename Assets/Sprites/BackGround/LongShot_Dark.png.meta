@@ -1,46 +1,10 @@
 fileFormatVersion: 2
-guid: 565d745176c5110479ce0a094e953ee4
+guid: 649aea6a1a0775848824ce7a76d10183
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5726716244179579235
-    second: dash_effect_Sheet_0
-  - first:
-      213: -2332481560083621974
-    second: dash_effect_Sheet_1
-  - first:
-      213: -7108942913328705193
-    second: dash_effect_Sheet_2
-  - first:
-      213: -5895049285910571550
-    second: dash_effect_Sheet_3
-  - first:
-      213: -4284747075107908157
-    second: dash_effect_Sheet_4
-  - first:
-      213: -3131736745221614332
-    second: dash_effect_Sheet_5
-  - first:
-      213: -6267281233209843663
-    second: dash_effect_Sheet_6
-  - first:
-      213: -171643268416017897
-    second: dash_effect_Sheet_7
-  - first:
-      213: 7232051455946280725
-    second: dash_effect_Sheet_8
-  - first:
-      213: 7299631309295603980
-    second: dash_effect_Sheet_9
-  - first:
-      213: 2434474679509589003
-    second: dash_effect_Sheet_10
-  - first:
-      213: -2501223589555814100
-    second: dash_effect_Sheet_11
-  - first:
-      213: 6964702736470258741
-    second: dash_effect_Sheet_12
+      213: -1438324658902701354
+    second: LongShot_Dark_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -162,89 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dash_effect_Sheet_0
+      name: LongShot_Dark_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.18, y: 0.5}
+        width: 2520
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e873f117d2c1d644ba3d17cd07b9c68d
-      internalID: 2110384532
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dash_effect_Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.26, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b63bf24c45ba2f428c18acd428e9000
-      internalID: -1423174766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dash_effect_Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.82, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7ec9f4f52c68d141ad9d6a8eb0d3160
-      internalID: -96659366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dash_effect_Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.93, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 192c07463bee25549aa0c75e46aebd84
-      internalID: -853729321
+      spriteID: 6da6b62e75b0a0ce0800000000000000
+      internalID: -1438324658902701354
       vertices: []
       indices: 
       edges: []
@@ -253,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0a84bd55686ea0843b295a9b09232191
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -262,11 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      dash_effect_Sheet_0: 2110384532
-      dash_effect_Sheet_1: -1423174766
-      dash_effect_Sheet_2: -96659366
-      dash_effect_Sheet_3: -853729321
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

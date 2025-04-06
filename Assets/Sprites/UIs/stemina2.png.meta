@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c2cc00d2637999449ab6422e34b77f12
+guid: 127f87c45322a99439c72554e7b27389
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2041596350234176214
-    second: IMG_8430_0
+      213: 5817483733485336896
+    second: stemina2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_8430_0
+      name: stemina2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2158
-        height: 955
+        x: 39
+        y: 39
+        width: 412
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6da217e4015355c10800000000000000
-      internalID: 2041596350234176214
+      spriteID: 049b10d12aadbb050800000000000000
+      internalID: 5817483733485336896
       vertices: []
       indices: 
       edges: []

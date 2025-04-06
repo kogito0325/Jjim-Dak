@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: c0bef3b409fddea4fa7347773ae80527
+guid: bbb30934744689a40a1ba6d1664f8e2f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6446993672035704923
-    second: Boss_Parrot_x6_0
+      213: -5841944806513463002
+    second: steminaALL_0
+  - first:
+      213: -2857949302927013459
+    second: steminaALL_1
+  - first:
+      213: 3371324273441292432
+    second: steminaALL_2
+  - first:
+      213: 5292363651078105978
+    second: steminaALL_3
+  - first:
+      213: -406164087762997558
+    second: steminaALL_4
+  - first:
+      213: 111631725880948473
+    second: steminaALL_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +141,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boss_Parrot_x6_0
+      name: steminaALL_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 20
         y: 0
-        width: 576
-        height: 576
-      alignment: 9
-      pivot: {x: 0.6, y: 0.48}
+        width: 1880
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56369392608b9c14191d787035e05f33
-      internalID: -638805455
+      spriteID: f6412d3fe307ca744be83d11b82d9db7
+      internalID: 193242082
       vertices: []
       indices: 
       edges: []
@@ -151,7 +166,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d41ff5a181c50964a9b8304b778c604f
+    spriteID: a0eb60819e0d19b45a5464b393d41969
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +176,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Boss_Parrot_x6_0: -638805455
+      steminaALL_0: 193242082
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

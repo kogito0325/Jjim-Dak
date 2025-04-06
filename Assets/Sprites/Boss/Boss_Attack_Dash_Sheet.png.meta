@@ -150,15 +150,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boss_Attack_Dash_Sheet_0
+      name: Boss_Attack_Dash_Sheet_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 768
-        width: 900
-        height: 768
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 132
+        width: 687
+        height: 381
+      alignment: 9
+      pivot: {x: 0.68, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,15 +172,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Attack_Dash_Sheet_1
+      name: Boss_Attack_Dash_Sheet_0
       rect:
         serializedVersion: 2
-        x: 900
-        y: 768
-        width: 900
-        height: 768
+        x: 166
+        y: 898
+        width: 562
+        height: 461
       alignment: 9
-      pivot: {x: 0.44444445, y: 0.5}
+      pivot: {x: 0.56, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -194,15 +194,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Attack_Dash_Sheet_2
+      name: Boss_Attack_Dash_Sheet_1
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 768
-        width: 900
-        height: 768
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1155
+        y: 898
+        width: 641
+        height: 430
+      alignment: 9
+      pivot: {x: 0.26, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -216,15 +216,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Attack_Dash_Sheet_3
+      name: Boss_Attack_Dash_Sheet_6
       rect:
         serializedVersion: 2
-        x: 2700
-        y: 768
-        width: 900
-        height: 768
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1161
+        y: 129
+        width: 569
+        height: 414
+      alignment: 9
+      pivot: {x: 0.26, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -238,15 +238,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Attack_Dash_Sheet_4
+      name: Boss_Attack_Dash_Sheet_2
       rect:
         serializedVersion: 2
-        x: 3600
-        y: 768
-        width: 900
-        height: 768
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1965
+        y: 898
+        width: 587
+        height: 419
+      alignment: 9
+      pivot: {x: 0.41, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -260,15 +260,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Attack_Dash_Sheet_5
+      name: Boss_Attack_Dash_Sheet_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 900
-        height: 768
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 2062
+        y: 129
+        width: 569
+        height: 419
+      alignment: 9
+      pivot: {x: 0.25, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -282,15 +282,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Attack_Dash_Sheet_6
+      name: Boss_Attack_Dash_Sheet_3
       rect:
         serializedVersion: 2
-        x: 900
-        y: 0
-        width: 900
-        height: 768
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 2853
+        y: 898
+        width: 593
+        height: 402
+      alignment: 9
+      pivot: {x: 0.41, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -304,15 +304,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Attack_Dash_Sheet_7
+      name: Boss_Attack_Dash_Sheet_8
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 0
-        width: 900
-        height: 768
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 2961
+        y: 129
+        width: 569
+        height: 426
+      alignment: 9
+      pivot: {x: 0.26, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -326,15 +326,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_Attack_Dash_Sheet_8
+      name: Boss_Attack_Dash_Sheet_4
       rect:
         serializedVersion: 2
-        x: 2700
-        y: 0
-        width: 900
-        height: 768
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 3915
+        y: 898
+        width: 585
+        height: 395
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -343,28 +343,6 @@ TextureImporter:
       bones: []
       spriteID: e8b55dd8120a34d44a1f2019308979cc
       internalID: -622971328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_Attack_Dash_Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 3600
-        y: 0
-        width: 900
-        height: 768
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70947fdebe9865841bb16f7ac800d426
-      internalID: -110484799
       vertices: []
       indices: 
       edges: []
@@ -383,16 +361,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Boss_Attack_Dash_Sheet_0: 1721923204
-      Boss_Attack_Dash_Sheet_1: -1594822895
-      Boss_Attack_Dash_Sheet_2: -1107709322
-      Boss_Attack_Dash_Sheet_3: -230658690
-      Boss_Attack_Dash_Sheet_4: -650946664
-      Boss_Attack_Dash_Sheet_5: -995190066
-      Boss_Attack_Dash_Sheet_6: 1705730330
-      Boss_Attack_Dash_Sheet_7: 962719118
-      Boss_Attack_Dash_Sheet_8: -622971328
-      Boss_Attack_Dash_Sheet_9: -110484799
+      0: -995190066
+      Boss_Attack_Dash_Sheet_0: -1594822895
+      Boss_Attack_Dash_Sheet_1: -1107709322
+      Boss_Attack_Dash_Sheet_2: -650946664
+      Boss_Attack_Dash_Sheet_3: 1705730330
+      Boss_Attack_Dash_Sheet_4: -622971328
+      Boss_Attack_Dash_Sheet_5: 1721923204
+      Boss_Attack_Dash_Sheet_6: -230658690
+      Boss_Attack_Dash_Sheet_7: -995190066
+      Boss_Attack_Dash_Sheet_8: 962719118
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

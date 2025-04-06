@@ -1,65 +1,75 @@
 ﻿using System.Collections;
+using System.Data.Common;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
     [Header("Player Stats")]
-    [SerializeField] private int hp;
-    [SerializeField] private float speed;
+    [SerializeField] private int maxHp;
     [SerializeField] private float maxEnergy;
-    [SerializeField] private float jumpPower;
-    [SerializeField] private float dashPower;
-
-
-    [Header("Utilities")]
-    [SerializeField] private float dashEnergy;
-    [SerializeField] private float dashCoolTime;
-    [SerializeField] private float dashDurationTime;
-    [SerializeField] private float guardEnergy;
-    [SerializeField] private float guardDurationTime;
     [SerializeField] private float energyHealAmount;
-    [SerializeField] private float healTime;
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpPower;
+    private int hp;
+    private float energy;
+
+    [Header("Attack Stats")]
     [SerializeField] private float attackDurationTime;
 
+    [Header("Dash")]
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float dashEnergy;
+    [SerializeField] private float dashDurationTime;
+    [SerializeField] private float dashCoolTime;
+
+    [Header("Heal")]
+    [SerializeField] private int healAmount;
+    [SerializeField] private float healEnergy;
+    [SerializeField] private float healTime;
+
+    [Header("Guard")]
+    [SerializeField] private float guardEnergy;
+    [SerializeField] private float guardDurationTime;
+
     public Image[] hearts;
-    public Image energyBar;
+    public Image[] energySprites;
     public GameObject guard;
     public GameObject counterPrefab;
-    public GameObject attackRangeRight;
-    public GameObject attackRangeLeft;
-    public SpriteRenderer healEffect;
+    public GameObject attackRange;
 
 
-    private float energy;
     private float inputX;
     private float xVelocity;
 
     [SerializeField] private bool isGrounded;
-    [SerializeField] private bool isDashingPossible;
+    [SerializeField] private bool isPossibleToDash;
     [SerializeField] private bool isHealing;
     [SerializeField] private bool isGuarding;
     [SerializeField] private bool isAlive;
+    [SerializeField] private bool isAttacking;
 
-    SpriteRenderer spriteRenderer;
     Rigidbody2D rigidBody;
     Animator animator;
+    SpriteRenderer sprRend;
 
 
     private void Start()
     {
         //Time.timeScale = 0.1f;
-        spriteRenderer = GetComponent<SpriteRenderer>();
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        sprRend = GetComponent<SpriteRenderer>();
 
         energy = maxEnergy;
+        hp = maxHp;
 
         InitializeFlags();
 
         UpdateHearts();
 
         StartCoroutine(IdleState());
+
     }
 
     private void Update()
@@ -72,12 +82,11 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha4) && isAlive) TakeDamage();
         animator.SetFloat("yVelocity", rigidBody.linearVelocityY);
-        healEffect.flipX = spriteRenderer.flipX;
     }
 
     private void InitializeFlags()
     {
-        isDashingPossible = true;
+        isPossibleToDash = true;
         isGrounded = true;
         isHealing = false;
         isGuarding = false;
@@ -89,7 +98,7 @@ public class PlayerScript : MonoBehaviour
         animator.SetBool("isMoving", false);
         while (true)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking)
             {
                 StartCoroutine(AttackState());
                 break;
@@ -104,12 +113,12 @@ public class PlayerScript : MonoBehaviour
                 StartCoroutine(JumpState());
                 break;
             }
-            if (Input.GetKeyDown(KeyCode.LeftShift) && isDashingPossible && energy >= dashEnergy)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && isPossibleToDash && energy >= dashEnergy)
             {
                 StartCoroutine(DashState());
                 break;
             }
-            if (Input.GetKeyDown(KeyCode.W) && !isHealing && hp < 5)
+            if (Input.GetKeyDown(KeyCode.W) && !isHealing && hp < maxHp && energy >= healEnergy)
             {
                 StartCoroutine(HealState());
                 break;
@@ -131,8 +140,8 @@ public class PlayerScript : MonoBehaviour
             inputX = Input.GetAxisRaw("Horizontal");
             xVelocity = inputX * speed;
 
-            if (xVelocity > 0) spriteRenderer.flipX = false;
-            else if (xVelocity < 0) spriteRenderer.flipX = true;
+            if (inputX < 0) transform.rotation = Quaternion.Euler(Vector3.up * 180f);
+            else if (inputX > 0) transform.rotation = Quaternion.Euler(Vector3.zero);
             MoveX();
 
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -140,7 +149,7 @@ public class PlayerScript : MonoBehaviour
                 StartCoroutine(JumpState());
                 break;
             }
-            if (Input.GetKeyDown(KeyCode.LeftShift) && isDashingPossible && energy >= dashEnergy)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && isPossibleToDash && energy >= dashEnergy)
             {
                 StartCoroutine(DashState());
                 break;
@@ -167,7 +176,7 @@ public class PlayerScript : MonoBehaviour
                 StartCoroutine(MoveState());
                 break;
             }
-            if (Input.GetKeyDown(KeyCode.LeftShift) && isDashingPossible && energy >= dashEnergy)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && isPossibleToDash && energy >= dashEnergy)
             {
                 StartCoroutine(DashState());
             }
@@ -181,46 +190,33 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator AttackState()
     {
-        //animator.SetBool("isAttackStarted", true);
-        GameObject tempObj = spriteRenderer.flipX ? attackRangeLeft : attackRangeRight;
-        tempObj.SetActive(true);
+        attackRange.SetActive(true);
+        isAttacking = true;
+        animator.SetTrigger("isAttacking");
 
-        float attackTimer = attackDurationTime;
-        bool isAttackContinuing = false;
-        yield return null;
-        while (attackTimer > 0)
-        {
-            attackTimer -= Time.deltaTime;
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                isAttackContinuing = true;
-            }
-            yield return null;
-        }
-        if (isAttackContinuing)
-        {
-            //animator.SetBool("isAttacking", true);
-            tempObj.SetActive(true);
-        }
         yield return new WaitForSeconds(attackDurationTime);
-        //animator.SetBool("isAttackStarted", false);
-        //animator.SetBool("isAttacking", false);
-        tempObj.SetActive(false);
+        attackRange.SetActive(false);
+        isAttacking = false;
         StartCoroutine(IdleState());
     }
 
 
     private IEnumerator DashState()
     {
-        isDashingPossible = false;
-        if (inputX == 0) inputX = spriteRenderer.flipX ? -1 : 1;
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"));
+        animator.SetTrigger("isDashing");
+        isPossibleToDash = false;
+        if (inputX == 0) inputX = transform.rotation.y == 0 ? 1 : -1;
         energy -= dashEnergy;
-        xVelocity = inputX * dashPower;
+        xVelocity = inputX * dashSpeed;
         MoveX();
+        rigidBody.linearVelocityY = Mathf.Clamp(rigidBody.linearVelocityY, 0, 10);
         yield return new WaitForSeconds(dashDurationTime);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
+        inputX = 0;
         StartCoroutine(IdleState());
         yield return new WaitForSeconds(dashCoolTime);
-        isDashingPossible = true;
+        isPossibleToDash = true;
     }
 
     private IEnumerator HealState()
@@ -233,7 +229,7 @@ public class PlayerScript : MonoBehaviour
         while (isHealing && healTimer > 0)
         {
             if (Input.GetKeyUp(KeyCode.W)) isHealing = false;
-            else if(Input.GetKeyDown(KeyCode.LeftShift) && isDashingPossible && energy >= dashEnergy)
+            else if(Input.GetKeyDown(KeyCode.LeftShift) && isPossibleToDash && energy >= dashEnergy)
             {
                 StartCoroutine(DashState());
                 break;
@@ -245,7 +241,8 @@ public class PlayerScript : MonoBehaviour
 
         if (healTimer <= 0)
         {
-            hp += 1;
+            energy -= healEnergy;
+            hp += healAmount;
             UpdateHearts();
             Debug.Log("Healing Success");
         }
@@ -263,7 +260,6 @@ public class PlayerScript : MonoBehaviour
         if (energy >= guardEnergy && !isGuarding)
         {
             energy -= guardEnergy;
-            StopAllCoroutines();
             StartCoroutine(GuardSequence());
         }
     }
@@ -301,13 +297,13 @@ public class PlayerScript : MonoBehaviour
         StartCoroutine(IdleState());
     }
 
-    private IEnumerator DeadState()
+    private void DeadState()
     {
         Debug.Log("Dead");
         isAlive = false;
-        animator.SetBool("isDead", true);
-        yield return null;
-        animator.SetBool("isDead", false);
+        animator.SetTrigger("isDead");
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"));
+
     }
 
     private void UpdateHearts()
@@ -319,20 +315,57 @@ public class PlayerScript : MonoBehaviour
     private void UpdateEnergyBar()
     {
         if (energy <= maxEnergy) energy += energyHealAmount * Time.deltaTime;
-        energyBar.fillAmount = energy / maxEnergy;
+        float energyUnit = maxEnergy / energySprites.Length;
+
+        for (int i = 0; i < energySprites.Length; i++)
+        {
+            energySprites[i].fillAmount = Mathf.Clamp((energy - energyUnit * i) / energyUnit, 0, 1);
+        }
     }
 
 
     public void TakeDamage(int damage = 1)
     {
+        FindAnyObjectByType<CameraScript>().ShakeCamera();
+        
         hp -= damage;
         UpdateHearts();
+
         if (hp <= 0 && isAlive)
         {
             StopAllCoroutines();
-            StartCoroutine(DeadState());
+            DeadState();
+            return;
         }
+
+        StartCoroutine(ProtectState());
     }
+
+    private IEnumerator ProtectState()
+    {
+        Time.timeScale = 0f;
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"));
+        yield return new WaitForSecondsRealtime(0.4f);
+
+        Time.timeScale = 1f;
+
+        StartCoroutine(IdleState());
+        float blinkTimer = 1f;
+        while (blinkTimer > 0)
+        {
+            Blink();
+            yield return new WaitForSeconds(0.12f);
+            blinkTimer -= 0.12f;
+        }
+        GetComponent<SpriteRenderer>().color = Color.white;
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
+    }
+
+    private void Blink()
+    {
+        sprRend.color = sprRend.color == Color.white ? Color.gray : Color.white;
+    }
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
