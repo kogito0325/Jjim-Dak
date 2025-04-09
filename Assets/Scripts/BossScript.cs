@@ -117,6 +117,7 @@ public class BossScript : MonoBehaviour
         {
             Debug.Log("BossHit");
             TakeDamage();
+            collision.GetComponentInParent<PlayerScript>().HealEnergy();
             collision.gameObject.SetActive(false);
         }
     }

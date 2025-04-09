@@ -16,6 +16,7 @@ public class PlayerScript : MonoBehaviour
 
     [Header("Attack Stats")]
     [SerializeField] private float attackDurationTime;
+    [SerializeField] private float attackHealEnergyAmount;
 
     [Header("Dash")]
     [SerializeField] private float dashSpeed;
@@ -48,6 +49,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private bool isGuarding;
     [SerializeField] private bool isAlive;
     [SerializeField] private bool isAttacking;
+    [SerializeField] private bool isDashing;
 
     Rigidbody2D rigidBody;
     Animator animator;
@@ -82,6 +84,8 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha4) && isAlive) TakeDamage();
         animator.SetFloat("yVelocity", rigidBody.linearVelocityY);
+
+        if (isDashing) rigidBody.linearVelocityY = 0;
     }
 
     private void InitializeFlags()
@@ -91,6 +95,7 @@ public class PlayerScript : MonoBehaviour
         isHealing = false;
         isGuarding = false;
         isAlive = true;
+        isDashing = false;
     }
 
     private IEnumerator IdleState()
@@ -134,6 +139,7 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator MoveState()
     {
+        Debug.Log("Enter Move");
         while (true)
         {
             if(isGrounded) animator.SetBool("isMoving", true);
@@ -203,18 +209,26 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator DashState()
     {
+        Debug.Log("Enter Dash");
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"));
         animator.SetTrigger("isDashing");
+        isDashing = true;
         isPossibleToDash = false;
         if (inputX == 0) inputX = transform.rotation.y == 0 ? 1 : -1;
         energy -= dashEnergy;
         xVelocity = inputX * dashSpeed;
         MoveX();
-        rigidBody.linearVelocityY = Mathf.Clamp(rigidBody.linearVelocityY, 0, 10);
+        rigidBody.linearVelocityY = 0f;
+        float tempGravity = rigidBody.gravityScale;
+        rigidBody.gravityScale = 0f;
+
         yield return new WaitForSeconds(dashDurationTime);
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
-        inputX = 0;
+        rigidBody.linearVelocityX = 0f;
+        isDashing = false;
+        rigidBody.gravityScale = tempGravity;
         StartCoroutine(IdleState());
+
         yield return new WaitForSeconds(dashCoolTime);
         isPossibleToDash = true;
     }
@@ -320,6 +334,8 @@ public class PlayerScript : MonoBehaviour
         for (int i = 0; i < energySprites.Length; i++)
         {
             energySprites[i].fillAmount = Mathf.Clamp((energy - energyUnit * i) / energyUnit, 0, 1);
+            if (energySprites[i].fillAmount < 1f) energySprites[i].color = new Color(1, 1, 1, 0.1f);
+            else energySprites[i].color = Color.white;
         }
     }
 
@@ -340,6 +356,13 @@ public class PlayerScript : MonoBehaviour
 
         StartCoroutine(ProtectState());
     }
+
+    public void HealEnergy(float amount = 0)
+    {
+        if (amount == 0) amount = attackHealEnergyAmount;
+        energy += amount;
+    }
+
 
     private IEnumerator ProtectState()
     {
