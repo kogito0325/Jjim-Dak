@@ -19,8 +19,9 @@ public class CameraScript : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
         if (Time.timeScale == 0) return;
-        initialPosition = new Vector3(Mathf.Clamp(player.position.x, -3f, 3f), 0, originZ);
+        initialPosition = new Vector3(Mathf.Clamp(player.position.x, -3.6f, 3.6f), 0, originZ);
         if (curShakeTime <= 0) transform.position = initialPosition;
         else
         {
