@@ -1,0 +1,626 @@
+fileFormatVersion: 2
+guid: 810b8cba8dd5a1843b3eae82625a0d48
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7693056232770103652
+    second: player_healing effect-Sheet_x3_0
+  - first:
+      213: -7828491546082379836
+    second: player_healing effect-Sheet_x3_1
+  - first:
+      213: -7986216261107874326
+    second: player_healing effect-Sheet_x3_2
+  - first:
+      213: -2584563363846334969
+    second: player_healing effect-Sheet_x3_3
+  - first:
+      213: 7350745195810123721
+    second: player_healing effect-Sheet_x3_4
+  - first:
+      213: 424237754037072439
+    second: player_healing effect-Sheet_x3_5
+  - first:
+      213: 5915804795399665025
+    second: player_healing effect-Sheet_x3_6
+  - first:
+      213: 547997248637697660
+    second: player_healing effect-Sheet_x3_7
+  - first:
+      213: -2477302595724352159
+    second: player_healing effect-Sheet_x3_8
+  - first:
+      213: 6639845439048294856
+    second: player_healing effect-Sheet_x3_9
+  - first:
+      213: 7747219222386340788
+    second: player_healing effect-Sheet_x3_10
+  - first:
+      213: 7334523522098144994
+    second: player_healing effect-Sheet_x3_11
+  - first:
+      213: 269126222255983241
+    second: player_healing effect-Sheet_x3_12
+  - first:
+      213: -8340533928462120999
+    second: player_healing effect-Sheet_x3_13
+  - first:
+      213: 4605908863208076761
+    second: player_healing effect-Sheet_x3_14
+  - first:
+      213: 7522621790913092693
+    second: player_healing effect-Sheet_x3_15
+  - first:
+      213: -6127198874259317218
+    second: player_healing effect-Sheet_x3_16
+  - first:
+      213: 5427525224996803525
+    second: player_healing effect-Sheet_x3_17
+  - first:
+      213: 3200310882809564333
+    second: player_healing effect-Sheet_x3_18
+  - first:
+      213: 6137904069202572791
+    second: player_healing effect-Sheet_x3_19
+  - first:
+      213: -5254232991497212435
+    second: player_healing effect-Sheet_x3_20
+  - first:
+      213: -8381718633545477064
+    second: player_healing effect-Sheet_x3_21
+  - first:
+      213: 2460228031963877586
+    second: player_healing effect-Sheet_x3_22
+  - first:
+      213: 4088615391559420317
+    second: player_healing effect-Sheet_x3_23
+  - first:
+      213: 797084251767576511
+    second: player_healing effect-Sheet_x3_24
+  - first:
+      213: -3690958013973937316
+    second: player_healing effect-Sheet_x3_25
+  - first:
+      213: -5573268517013941419
+    second: player_healing effect-Sheet_x3_26
+  - first:
+      213: 3760212467970823328
+    second: player_healing effect-Sheet_x3_27
+  - first:
+      213: -5521728675765370632
+    second: player_healing effect-Sheet_x3_28
+  - first:
+      213: -1375376783110940386
+    second: player_healing effect-Sheet_x3_29
+  - first:
+      213: 3050447072610416622
+    second: player_healing effect-Sheet_x3_30
+  - first:
+      213: -7865267847499968327
+    second: player_healing effect-Sheet_x3_31
+  - first:
+      213: -1292194455674452136
+    second: player_healing effect-Sheet_x3_32
+  - first:
+      213: -5704075246932287347
+    second: player_healing effect-Sheet_x3_33
+  - first:
+      213: -3899563715313867191
+    second: player_healing effect-Sheet_x3_34
+  - first:
+      213: 1372591966231812359
+    second: player_healing effect-Sheet_x3_35
+  - first:
+      213: -3919645347662640225
+    second: player_healing effect-Sheet_x3_36
+  - first:
+      213: 6007339673360418341
+    second: player_healing effect-Sheet_x3_37
+  - first:
+      213: 1540730669279134881
+    second: player_healing effect-Sheet_x3_38
+  - first:
+      213: -7663759126304914591
+    second: player_healing effect-Sheet_x3_39
+  - first:
+      213: 1703098688874302645
+    second: player_healing effect-Sheet_x3_40
+  - first:
+      213: 2470017059889279854
+    second: player_healing effect-Sheet_x3_41
+  - first:
+      213: -2330847374429607782
+    second: player_healing effect-Sheet_x3_42
+  - first:
+      213: -4257338184709412494
+    second: player_healing effect-Sheet_x3_43
+  - first:
+      213: -736513644406408959
+    second: player_healing effect-Sheet_x3_44
+  - first:
+      213: 7805501948492975577
+    second: player_healing effect-Sheet_x3_45
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28be0b3f4abdcf4196eec61695adb73
+      internalID: -1037036961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1152
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc8622f63b5a10041ae0ef92727fcc95
+      internalID: -1920579792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1152
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a80b11b16e2914aaad343e96496bda
+      internalID: -1685608379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_3
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1152
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908d291f78bad2f4a84f24f2b75eb647
+      internalID: -987051973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e84831fef5e8c8458686f60e164f58e
+      internalID: -161967089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_5
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 768
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c74e572209f684280b869c1c275a11
+      internalID: 1836224008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410ffeb4938ca314d9c849f858d23f10
+      internalID: 955980465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_7
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 768
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d0c69e5ae41a8d4ca9d96c205ae41f1
+      internalID: 119884459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874ed8115f25e8f488cca6d7bbbfb4ee
+      internalID: 1773492022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_9
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67063e68abcd4842b04d406d27561e6
+      internalID: -2076087490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_10
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 384
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72649adc65c1e2e4a85086cc99b5b188
+      internalID: -104001922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_11
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 384
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13f0c387c9f80f546b700709b98ded26
+      internalID: -1901003004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b022b516b120644387a125e2b1b50c2
+      internalID: 2061279854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_13
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be436f4f02d1d7f4ba0f5d4c7db81aa6
+      internalID: -1412858145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_healing effect-Sheet_x3_14
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beecb3ad271f58d439e5cb240a347048
+      internalID: -1709654334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1ac18cc2da06c48478cda7bf278c5759
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      player_healing effect-Sheet_x3_0: -1037036961
+      player_healing effect-Sheet_x3_1: -1920579792
+      player_healing effect-Sheet_x3_10: -104001922
+      player_healing effect-Sheet_x3_11: -1901003004
+      player_healing effect-Sheet_x3_12: 2061279854
+      player_healing effect-Sheet_x3_13: -1412858145
+      player_healing effect-Sheet_x3_14: -1709654334
+      player_healing effect-Sheet_x3_2: -1685608379
+      player_healing effect-Sheet_x3_3: -987051973
+      player_healing effect-Sheet_x3_4: -161967089
+      player_healing effect-Sheet_x3_5: 1836224008
+      player_healing effect-Sheet_x3_6: 955980465
+      player_healing effect-Sheet_x3_7: 119884459
+      player_healing effect-Sheet_x3_8: 1773492022
+      player_healing effect-Sheet_x3_9: -2076087490
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

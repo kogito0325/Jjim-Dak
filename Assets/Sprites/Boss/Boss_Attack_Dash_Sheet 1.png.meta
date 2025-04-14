@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: b8c529734f6b62940909e1d3b45b9516
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3303382412597330901
+    second: Boss_Attack_Dash_Sheet 1_0
+  - first:
+      213: 3068874481099971361
+    second: Boss_Attack_Dash_Sheet 1_1
+  - first:
+      213: 5067761910666792723
+    second: Boss_Attack_Dash_Sheet 1_2
+  - first:
+      213: 1579618689178750125
+    second: Boss_Attack_Dash_Sheet 1_3
+  - first:
+      213: 1359089748444895360
+    second: Boss_Attack_Dash_Sheet 1_4
+  - first:
+      213: 8181946527196571326
+    second: Boss_Attack_Dash_Sheet 1_5
+  - first:
+      213: -712517613096251624
+    second: Boss_Attack_Dash_Sheet 1_6
+  - first:
+      213: 3006022175981473395
+    second: Boss_Attack_Dash_Sheet 1_7
+  - first:
+      213: 89633237374902157
+    second: Boss_Attack_Dash_Sheet 1_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss_Attack_Dash_Sheet 1_0
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 899
+        width: 560
+        height: 458
+      alignment: 9
+      pivot: {x: 0.56, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2cfcd3a2370822d0800000000000000
+      internalID: -3303382412597330901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Dash_Sheet 1_1
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 899
+        width: 638
+        height: 428
+      alignment: 9
+      pivot: {x: 0.26, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12b993ab415d69a20800000000000000
+      internalID: 3068874481099971361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Dash_Sheet 1_2
+      rect:
+        serializedVersion: 2
+        x: 1967
+        y: 899
+        width: 584
+        height: 416
+      alignment: 9
+      pivot: {x: 0.41, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31f8c8b8b9e445640800000000000000
+      internalID: 5067761910666792723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Dash_Sheet 1_3
+      rect:
+        serializedVersion: 2
+        x: 2855
+        y: 899
+        width: 590
+        height: 398
+      alignment: 9
+      pivot: {x: 0.41, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac411124deebe510800000000000000
+      internalID: 1579618689178750125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Dash_Sheet 1_4
+      rect:
+        serializedVersion: 2
+        x: 3917
+        y: 899
+        width: 494
+        height: 392
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 088dee9ece47cd210800000000000000
+      internalID: 1359089748444895360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Dash_Sheet 1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 131
+        width: 685
+        height: 386
+      alignment: 9
+      pivot: {x: 0.68, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb6eac4440d1c8170800000000000000
+      internalID: 8181946527196571326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Dash_Sheet 1_6
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 131
+        width: 566
+        height: 410
+      alignment: 9
+      pivot: {x: 0.26, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81f40378101ac16f0800000000000000
+      internalID: -712517613096251624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Dash_Sheet 1_7
+      rect:
+        serializedVersion: 2
+        x: 2063
+        y: 131
+        width: 566
+        height: 416
+      alignment: 9
+      pivot: {x: 0.25, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e82521e3987b920800000000000000
+      internalID: 3006022175981473395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Dash_Sheet 1_8
+      rect:
+        serializedVersion: 2
+        x: 2963
+        y: 131
+        width: 566
+        height: 422
+      alignment: 9
+      pivot: {x: 0.26, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8f9cc954f07e3100800000000000000
+      internalID: 89633237374902157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: afc0ddfb1c70665438dd0ae52c69c929
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Boss_Attack_Dash_Sheet 1_0: -3303382412597330901
+      Boss_Attack_Dash_Sheet 1_1: 3068874481099971361
+      Boss_Attack_Dash_Sheet 1_2: 5067761910666792723
+      Boss_Attack_Dash_Sheet 1_3: 1579618689178750125
+      Boss_Attack_Dash_Sheet 1_4: 1359089748444895360
+      Boss_Attack_Dash_Sheet 1_5: 8181946527196571326
+      Boss_Attack_Dash_Sheet 1_6: -712517613096251624
+      Boss_Attack_Dash_Sheet 1_7: 3006022175981473395
+      Boss_Attack_Dash_Sheet 1_8: 89633237374902157
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

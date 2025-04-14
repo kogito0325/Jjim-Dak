@@ -1,0 +1,331 @@
+fileFormatVersion: 2
+guid: f0f67475a9bc59649b6606d6a2d9b8f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6070602911424494679
+    second: player_dash_effect_2-Sheet_x3_0
+  - first:
+      213: 7047924208843176670
+    second: player_dash_effect_2-Sheet_x3_1
+  - first:
+      213: -6265405786185198990
+    second: player_dash_effect_2-Sheet_x3_2
+  - first:
+      213: 5200638822424516041
+    second: player_dash_effect_2-Sheet_x3_3
+  - first:
+      213: -5963374744860764305
+    second: player_dash_effect_2-Sheet_x3_4
+  - first:
+      213: 1446391826317598290
+    second: player_dash_effect_2-Sheet_x3_5
+  - first:
+      213: 2643767091807517416
+    second: player_dash_effect_2-Sheet_x3_6
+  - first:
+      213: 2004998852609809864
+    second: player_dash_effect_2-Sheet_x3_7
+  - first:
+      213: -8087156762518035099
+    second: player_dash_effect_2-Sheet_x3_8
+  - first:
+      213: -2264997852809231182
+    second: player_dash_effect_2-Sheet_x3_9
+  - first:
+      213: -7877538340862043971
+    second: player_dash_effect_2-Sheet_x3_10
+  - first:
+      213: -6770909128841916847
+    second: player_dash_effect_2-Sheet_x3_11
+  - first:
+      213: 1788659843416633215
+    second: player_dash_effect_2-Sheet_x3_12
+  - first:
+      213: 6753810808502271496
+    second: player_dash_effect_2-Sheet_x3_13
+  - first:
+      213: 4995797347669862152
+    second: player_dash_effect_2-Sheet_x3_14
+  - first:
+      213: 3767041640942987135
+    second: player_dash_effect_2-Sheet_x3_15
+  - first:
+      213: -3753142535373192055
+    second: player_dash_effect_2-Sheet_x3_16
+  - first:
+      213: -4633961619716328466
+    second: player_dash_effect_2-Sheet_x3_17
+  - first:
+      213: -8212417866776230793
+    second: player_dash_effect_2-Sheet_x3_18
+  - first:
+      213: -5542491335915728235
+    second: player_dash_effect_2-Sheet_x3_19
+  - first:
+      213: 2333898093098401532
+    second: player_dash_effect_2-Sheet_x3_20
+  - first:
+      213: -5707291380756520835
+    second: player_dash_effect_2-Sheet_x3_21
+  - first:
+      213: 8679057551861222850
+    second: player_dash_effect_2-Sheet_x3_22
+  - first:
+      213: -4057225563812154100
+    second: player_dash_effect_2-Sheet_x3_23
+  - first:
+      213: 6842966960655081557
+    second: player_dash_effect_2-Sheet_x3_24
+  - first:
+      213: 4621471318242099210
+    second: player_dash_effect_2-Sheet_x3_25
+  - first:
+      213: 8526978307530230781
+    second: player_dash_effect_2-Sheet_x3_26
+  - first:
+      213: -3713518766924923063
+    second: player_dash_effect_2-Sheet_x3_27
+  - first:
+      213: -4460747868648079779
+    second: player_dash_effect_2-Sheet_x3_28
+  - first:
+      213: 5447504255982226426
+    second: player_dash_effect_2-Sheet_x3_29
+  - first:
+      213: -6194137081881628414
+    second: player_dash_effect_2-Sheet_x3_30
+  - first:
+      213: 6800503889675204320
+    second: player_dash_effect_2-Sheet_x3_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: player_dash_effect_2-Sheet_x3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 384
+        height: 384
+      alignment: 9
+      pivot: {x: 0.21, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f1c34594ad8254797434f05c7537cc
+      internalID: 1161606407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_dash_effect_2-Sheet_x3_1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 384
+        height: 384
+      alignment: 9
+      pivot: {x: 0.26, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573b7ef78a12f6e4880d8ebe5e1080cd
+      internalID: -962295604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_dash_effect_2-Sheet_x3_2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 384
+        height: 384
+      alignment: 9
+      pivot: {x: 0.82, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f45814e422de24db3f2f7f8a8a40eb
+      internalID: -800976751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_dash_effect_2-Sheet_x3_3
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 384
+        height: 384
+      alignment: 9
+      pivot: {x: 0.92, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b96ed2a18a6a5074caeae0c933cd0167
+      internalID: -697762872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f2b7e1427d4d22e41912cfbb960c6a5a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      player_dash_effect_2-Sheet_x3_0: 1161606407
+      player_dash_effect_2-Sheet_x3_1: -962295604
+      player_dash_effect_2-Sheet_x3_2: -800976751
+      player_dash_effect_2-Sheet_x3_3: -697762872
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

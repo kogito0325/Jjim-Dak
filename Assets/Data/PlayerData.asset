@@ -29,5 +29,6 @@ MonoBehaviour:
   guardEnergy: 20
   guardDurationTime: 0.2
   guardHealEnergyAmount: 10
+  guardCoolTime: 0.5
   counterDamage: 2
   protectTime: 1

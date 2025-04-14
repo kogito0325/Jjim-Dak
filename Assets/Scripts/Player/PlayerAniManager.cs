@@ -42,4 +42,11 @@ public class PlayerAniManager : MonoBehaviour
     {
         animator.Play(animationNames[state]);
     }
+
+
+    public void SwitchAnimType()
+    {
+        animator.updateMode = animator.updateMode == AnimatorUpdateMode.UnscaledTime
+            ? AnimatorUpdateMode.Normal : AnimatorUpdateMode.UnscaledTime;
+    }
 }

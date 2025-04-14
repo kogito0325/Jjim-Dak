@@ -24,8 +24,6 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4))
             playerHealth.TakeDamage();
 
-
-
         if (!playerHealth.isAlive) return;
 
         inputX = Input.GetAxisRaw("Horizontal");

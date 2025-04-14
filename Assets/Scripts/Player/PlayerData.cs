@@ -29,6 +29,7 @@ public class PlayerData : ScriptableObject
     public float guardEnergy;
     public float guardDurationTime;
     public float guardHealEnergyAmount;
+    public float guardCoolTime;
     public int counterDamage;
 
     [Header("Utility")]

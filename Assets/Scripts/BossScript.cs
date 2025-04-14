@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,13 +14,20 @@ public class BossScript : MonoBehaviour
     public Dir lookDir;
     public float actionTerm;
     public float dashSpeed;
+    public int[] phase;
 
     float actionBreakTime;
     int dashCount;
+    int phaseIdx;
+    int atkCount;
+    bool isInPattern;
 
     public GameObject attackRange;
     public Image hpBar;
     public SpriteRenderer backGround;
+    public Material WhiteFlashMaterial;
+
+    Material originMaterial;
 
     Animator animator;
     Rigidbody2D rigid;
@@ -33,6 +41,11 @@ public class BossScript : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         sprRend = GetComponent<SpriteRenderer>();
 
+        originMaterial = sprRend.material;
+
+        isInPattern = false;
+        atkCount = 0;
+        phaseIdx = 0;
         lookDir = Dir.Left;
         actionBreakTime = actionTerm;
         dashCount = 0;
@@ -42,19 +55,23 @@ public class BossScript : MonoBehaviour
 
     private void Update()
     {
+
+        Debug.Log(sprRend.color.a);
         if (hp <= 0) Die();
 
         actionBreakTime -= Time.deltaTime;
         if (actionBreakTime > 0) return;
+
+        if (isInPattern) return;
+        isInPattern = true;
 
         if (dashCount == 0)
         {
             LockOn();
             Dash();
         }
+
     }
-
-
 
     private void Dash()
     {
@@ -70,7 +87,7 @@ public class BossScript : MonoBehaviour
                 rigid.linearVelocityX = 0;
                 attackRange.SetActive(false);
                 dashCount = 0;
-                actionBreakTime = actionTerm;
+                EndPattern();
                 break;
             default:
                 break;
@@ -96,26 +113,80 @@ public class BossScript : MonoBehaviour
     }
     private void Die()
     {
-        sprRend.color = Color.gray;
+        rigid.linearVelocity = Vector2.zero;
+        animator.Play("Die");
+        gameObject.layer = LayerMask.NameToLayer("Dead");
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Dead"));
+        attackRange.SetActive(false);
         GetComponent<BossScript>().enabled = false;
     }
     public void TakeDamage(int damage = 1)
     {
         hp -= damage;
         UpdateHpBar();
+
+        atkCount++;
+
+        sprRend.material = WhiteFlashMaterial;
+        Invoke("BlinkOut", 0.1f);
+
         if (hp <= 0) Die();
+        else if (hp <= phase[phaseIdx])
+        {
+            phaseIdx++;
+            isInPattern = true;
+            StartCoroutine(Groggy());
+        }
+    }
+    private void BlinkOut()
+    {
+        sprRend.material = originMaterial;
     }
     private void UpdateHpBar()
     {
         hpBar.fillAmount = (float)hp / maxHp;
-        backGround.color = new Color(1f, 1f, 1f, (float)hp / maxHp);
+        
+    }
+
+    private IEnumerator Groggy()
+    {
+        rigid.linearVelocity = Vector2.zero;
+        dashCount = 0;
+        animator.Play("Groggy1");
+        atkCount = 0;
+        float groggyTimer = 5f;
+        while (groggyTimer > 0 && atkCount < 5)
+        {
+            groggyTimer -= Time.deltaTime;
+
+            yield return null;
+        }
+        animator.Play("Groggy3");
+        if (phaseIdx == 2) StartCoroutine(FadeOut(backGround, 3f));
+    }
+
+    private IEnumerator FadeOut(SpriteRenderer sprRend, float timer)
+    {
+        float maxTimer = timer;
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            timer = Mathf.Clamp(timer, 0, maxTimer);
+            sprRend.color = new Color(1f, 1f, 1f, timer / maxTimer);
+            yield return null;
+        }
+    }
+
+    private void EndPattern()
+    {
+        actionBreakTime = actionTerm;
+        isInPattern = false;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("PlayerAtk"))
         {
-            Debug.Log("BossHit");
             TakeDamage();
             collision.GetComponentInParent<PlayerStemina>()
                 .HealEnergy(

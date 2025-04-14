@@ -2,18 +2,14 @@
 
 public class PlayerCollision : MonoBehaviour
 {
-    PlayerData playerData;
     PlayerCombat playerCombat;
     PlayerHealth playerHealth;
-    PlayerStemina playerStemina;
     PlayerMovement playerMovement;
 
     void Start()
     {
-        playerData = GetComponent<PlayerScript>().playerData;
         playerCombat = GetComponent<PlayerCombat>();
         playerHealth = GetComponent<PlayerHealth>();
-        playerStemina = GetComponent<PlayerStemina>();
         playerMovement = GetComponent<PlayerMovement>();
     }
 
@@ -26,8 +22,18 @@ public class PlayerCollision : MonoBehaviour
             playerMovement.isGrounded = true;
         }
 
-        if (collision.collider.CompareTag("Boss") || collision.collider.CompareTag("BossAtk"))
+        if (collision.collider.CompareTag("Boss"))
         {
+            if (playerCombat.isGuarding) playerCombat.CounterAttack();
+            else playerHealth.TakeDamage();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("BossAtk"))
+        {
+            collision.gameObject.SetActive(false);
             if (playerCombat.isGuarding) playerCombat.CounterAttack();
             else playerHealth.TakeDamage();
         }

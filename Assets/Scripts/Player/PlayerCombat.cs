@@ -13,6 +13,7 @@ public class PlayerCombat : MonoBehaviour
 
     private float atkTimer;
     private float guardTimer;
+    private float guardCoolTimer;
     private float nextAtkTime;
 
     public bool isHealing { get; private set; }
@@ -26,6 +27,7 @@ public class PlayerCombat : MonoBehaviour
         playerStemina = GetComponent<PlayerStemina>();
         rigid = GetComponent<Rigidbody2D>();
         nextAtkTime = 0f;
+        guardCoolTimer = 0f;
     }
 
     private void Update()
@@ -43,7 +45,8 @@ public class PlayerCombat : MonoBehaviour
         else
             isGuarding = false;
 
-        Debug.Log(nextAtkTime);
+        if (guardCoolTimer > 0)
+            guardCoolTimer -= Time.deltaTime;
     }
 
     public void Attack()
@@ -69,10 +72,13 @@ public class PlayerCombat : MonoBehaviour
     public void Guard()
     {
         if (isHealing || isGuarding || rigid.linearVelocity != Vector2.zero) return;
+        if (guardCoolTimer > 0) return;
+
         Debug.Log("Guard");
         playerStemina.SpendEnergy(playerData.guardEnergy);
         isGuarding = true;   
         guardTimer = playerData.attackDurationTime;
+        guardCoolTimer = playerData.guardCoolTime;
         playerAni.Play(PlayerAnimState.GUARD);
     }
 
@@ -83,6 +89,7 @@ public class PlayerCombat : MonoBehaviour
         FindAnyObjectByType<BossScript>().TakeDamage(playerData.counterDamage);
         isGuarding = false;
         playerHealth.TakeDamage(0);
+        playerAni.SwitchAnimType();
         playerAni.Play(PlayerAnimState.COUNTER);
     }
 

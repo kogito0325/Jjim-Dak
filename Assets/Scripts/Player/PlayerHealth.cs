@@ -16,13 +16,17 @@ public class PlayerHealth : MonoBehaviour
         playerAni = GetComponent<PlayerAniManager>();
         hp = playerData.maxHp;
     }
+
     public void TakeDamage(int damage = 1)
     {
         if (damage > 0)  // 데미지를 입었을 때
             FindAnyObjectByType<CameraScript>().ShakeCamera();
 
         hp -= damage;
-        UpdateHearts();
+        if (damage > 0)
+            hearts[hp].GetComponent<Animator>().Play($"Disappear{hp}");
+        else
+            UpdateHearts();
 
         if (hp <= 0)
         {
@@ -66,7 +70,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void UpdateHearts()
     {
-        foreach (Image sprite in hearts) sprite.gameObject.SetActive(false);
-        for (int i = 0; i < hp; i++) hearts[i].gameObject.SetActive(true);
+        foreach (Image sprite in hearts) sprite.enabled = false;
+        for (int i = 0; i < hp; i++) hearts[i].GetComponent<Animator>().Play("Idle");
     }
 }
