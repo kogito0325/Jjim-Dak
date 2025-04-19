@@ -1,25 +1,13 @@
 fileFormatVersion: 2
-guid: f0081757cd9636f47b7c34764363329b
+guid: 2edd2ee99371ce1409bb1143ae3d5103
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8382655455928371810
-    second: "\uB354\uBBF8-\uC774\uB3D9_0"
+      213: -268844096333001003
+    second: Boss_Attack_ShockWave_1_Sheet_0
   - first:
-      213: 8586983242181193970
-    second: "\uB354\uBBF8-\uC774\uB3D9_1"
-  - first:
-      213: -7745290950684350075
-    second: "\uB354\uBBF8-\uC774\uB3D9_2"
-  - first:
-      213: -4262350550396351587
-    second: "\uB354\uBBF8-\uC774\uB3D9_3"
-  - first:
-      213: 5024227657292822483
-    second: "\uB354\uBBF8-\uC774\uB3D9_4"
-  - first:
-      213: 629931742858057170
-    second: "\uB354\uBBF8-\uC774\uB3D9_5"
+      213: -3318337391246516878
+    second: Boss_Attack_ShockWave_1_Sheet_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -141,89 +129,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uB354\uBBF8-\uC774\uB3D9_0"
+      name: Boss_Attack_ShockWave_1_Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 600
-        width: 800
-        height: 600
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 167
+        y: 131
+        width: 560
+        height: 458
+      alignment: 9
+      pivot: {x: 0.56, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9536eaa643daab80800000000000000
-      internalID: -8382655455928371810
+      spriteID: 5de4c1208bfd44cf0800000000000000
+      internalID: -268844096333001003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB354\uBBF8-\uC774\uB3D9_1"
+      name: Boss_Attack_ShockWave_1_Sheet_1
       rect:
         serializedVersion: 2
-        x: 800
-        y: 600
-        width: 800
-        height: 600
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1193
+        y: 131
+        width: 596
+        height: 416
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f0317253c71b2770800000000000000
-      internalID: 8586983242181193970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\uB354\uBBF8-\uC774\uB3D9_2"
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 800
-        height: 600
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 589696aaae2338490800000000000000
-      internalID: -7745290950684350075
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\uB354\uBBF8-\uC774\uB3D9_3"
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 0
-        width: 800
-        height: 600
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d9b4f6fd1c619d4c0800000000000000
-      internalID: -4262350550396351587
+      spriteID: 27ddad559b5e2f1d0800000000000000
+      internalID: -3318337391246516878
       vertices: []
       indices: 
       edges: []
@@ -232,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9ff5d8f998184da4eab4109f6d3c3c2b
+    spriteID: 909b61edfa4eed945ae16171b809bf20
     internalID: 0
     vertices: []
     indices: 
@@ -242,10 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\uB354\uBBF8-\uC774\uB3D9_0": -8382655455928371810
-      "\uB354\uBBF8-\uC774\uB3D9_1": 8586983242181193970
-      "\uB354\uBBF8-\uC774\uB3D9_2": -7745290950684350075
-      "\uB354\uBBF8-\uC774\uB3D9_3": -4262350550396351587
+      Boss_Attack_ShockWave_1_Sheet_0: -268844096333001003
+      Boss_Attack_ShockWave_1_Sheet_1: -3318337391246516878
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: boss_groggy_3
+  m_Name: boss_jump_1
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,15 +21,15 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1015935874, guid: 674c0984366ac4b42b84bd7a7b5706fd, type: 3}
-    - time: 0.25
-      value: {fileID: -340101092, guid: 674c0984366ac4b42b84bd7a7b5706fd, type: 3}
+      value: {fileID: -587992905, guid: 79f35f854a4f1844fa87cfb8cb277db5, type: 3}
+    - time: 0.16666667
+      value: {fileID: 2106324471, guid: 79f35f854a4f1844fa87cfb8cb277db5, type: 3}
+    - time: 0.3
+      value: {fileID: 1971615296, guid: 79f35f854a4f1844fa87cfb8cb277db5, type: 3}
+    - time: 0.43333334
+      value: {fileID: 368092045, guid: 79f35f854a4f1844fa87cfb8cb277db5, type: 3}
     - time: 0.5
-      value: {fileID: -1081619055, guid: 674c0984366ac4b42b84bd7a7b5706fd, type: 3}
-    - time: 0.75
-      value: {fileID: -857717430, guid: 674c0984366ac4b42b84bd7a7b5706fd, type: 3}
-    - time: 1
-      value: {fileID: -857717430, guid: 674c0984366ac4b42b84bd7a7b5706fd, type: 3}
+      value: {fileID: 368092045, guid: 79f35f854a4f1844fa87cfb8cb277db5, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -52,17 +52,17 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1015935874, guid: 674c0984366ac4b42b84bd7a7b5706fd, type: 3}
-    - {fileID: -340101092, guid: 674c0984366ac4b42b84bd7a7b5706fd, type: 3}
-    - {fileID: -1081619055, guid: 674c0984366ac4b42b84bd7a7b5706fd, type: 3}
-    - {fileID: -857717430, guid: 674c0984366ac4b42b84bd7a7b5706fd, type: 3}
-    - {fileID: -857717430, guid: 674c0984366ac4b42b84bd7a7b5706fd, type: 3}
+    - {fileID: -587992905, guid: 79f35f854a4f1844fa87cfb8cb277db5, type: 3}
+    - {fileID: 2106324471, guid: 79f35f854a4f1844fa87cfb8cb277db5, type: 3}
+    - {fileID: 1971615296, guid: 79f35f854a4f1844fa87cfb8cb277db5, type: 3}
+    - {fileID: 368092045, guid: 79f35f854a4f1844fa87cfb8cb277db5, type: 3}
+    - {fileID: 368092045, guid: 79f35f854a4f1844fa87cfb8cb277db5, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.0166667
+    m_StopTime: 0.51666665
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -82,8 +82,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.0166667
-    functionName: RecoveryAttack
+  - time: 0.5
+    functionName: Jump
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

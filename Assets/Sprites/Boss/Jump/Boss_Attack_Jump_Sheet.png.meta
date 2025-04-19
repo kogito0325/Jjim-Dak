@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 79f35f854a4f1844fa87cfb8cb277db5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5106574486950330339
+    second: Boss_Attack_Jump_Sheet_0
+  - first:
+      213: -4098390491935023770
+    second: Boss_Attack_Jump_Sheet_1
+  - first:
+      213: -308369300931353532
+    second: Boss_Attack_Jump_Sheet_2
+  - first:
+      213: 9018281174577088793
+    second: Boss_Attack_Jump_Sheet_3
+  - first:
+      213: 8676075201261004381
+    second: Boss_Attack_Jump_Sheet_4
+  - first:
+      213: 3222075480931311392
+    second: Boss_Attack_Jump_Sheet_5
+  - first:
+      213: 8758057984382375650
+    second: Boss_Attack_Jump_Sheet_6
+  - first:
+      213: -7822072317653904684
+    second: Boss_Attack_Jump_Sheet_7
+  - first:
+      213: 1973371595055495300
+    second: Boss_Attack_Jump_Sheet_8
+  - first:
+      213: -8088967159815699599
+    second: Boss_Attack_Jump_Sheet_9
+  - first:
+      213: 5284998446686415742
+    second: Boss_Attack_Jump_Sheet_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss_Attack_Jump_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 897
+        width: 618
+        height: 421
+      alignment: 9
+      pivot: {x: 0.28, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beed7cf5cbd1f5a44a520c7b04652af9
+      internalID: -587992905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Jump_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 897
+        width: 608
+        height: 385
+      alignment: 9
+      pivot: {x: 0.28, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b817fe71b9d116c478ef38a60d851c95
+      internalID: 2106324471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Jump_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2055
+        y: 897
+        width: 607
+        height: 361
+      alignment: 9
+      pivot: {x: 0.28, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501debf4403d275488fb3bf65b24ede3
+      internalID: 1971615296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Jump_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2960
+        y: 897
+        width: 614
+        height: 421
+      alignment: 9
+      pivot: {x: 0.28, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef34b64e24e8a9b4ebfab451f6a18aab
+      internalID: 368092045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Jump_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 3927
+        y: 897
+        width: 565
+        height: 498
+      alignment: 9
+      pivot: {x: 0.28, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c0b1fa495cb0834aa6b21d736eacb13
+      internalID: -1930729042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Jump_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 4700
+        y: 897
+        width: 530
+        height: 630
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7235b2607be81634794168a421c860b4
+      internalID: 2108902365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Jump_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 128
+        width: 709
+        height: 379
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb8e4172d8ca274a883d8e90a5c8379
+      internalID: 791879740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Jump_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 128
+        width: 685
+        height: 384
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dacfabb1e95a3e469554928dc4330ae
+      internalID: 118343496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Jump_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 128
+        width: 524
+        height: 482
+      alignment: 9
+      pivot: {x: 0.28, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9a12d6ea0b96943931b7b46b5041f8
+      internalID: 1481017344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Jump_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2949
+        y: 128
+        width: 570
+        height: 403
+      alignment: 9
+      pivot: {x: 0.28, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9002520fb2fba4596f1221bb9cb53e
+      internalID: -2124426955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Attack_Jump_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 3843
+        y: 128
+        width: 619
+        height: 421
+      alignment: 9
+      pivot: {x: 0.28, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040f20ad208c82c44822fbf62be0a3b7
+      internalID: 1296195060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f2831c681457f694c8aa982e71b44efc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Boss_Attack_Jump_Sheet_0: -587992905
+      Boss_Attack_Jump_Sheet_1: 2106324471
+      Boss_Attack_Jump_Sheet_10: 1296195060
+      Boss_Attack_Jump_Sheet_2: 1971615296
+      Boss_Attack_Jump_Sheet_3: 368092045
+      Boss_Attack_Jump_Sheet_4: -1930729042
+      Boss_Attack_Jump_Sheet_5: 2108902365
+      Boss_Attack_Jump_Sheet_6: 791879740
+      Boss_Attack_Jump_Sheet_7: 118343496
+      Boss_Attack_Jump_Sheet_8: 1481017344
+      Boss_Attack_Jump_Sheet_9: -2124426955
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

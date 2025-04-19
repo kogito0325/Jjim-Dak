@@ -16,7 +16,7 @@ MonoBehaviour:
   maxEnergy: 60
   energyHealAmount: 1
   speed: 10
-  jumpPower: 21
+  jumpPower: 18
   attackDurationTime: 0.5
   attackHealEnergyAmount: 4
   dashSpeed: 25

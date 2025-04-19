@@ -14,15 +14,21 @@ public class BossScript : MonoBehaviour
     public Dir lookDir;
     public float actionTerm;
     public float dashSpeed;
+    public float jumpPower;
     public int[] phase;
 
     float actionBreakTime;
-    int dashCount;
+    int patternCount;
     int phaseIdx;
     int atkCount;
     bool isInPattern;
+    bool isOnWall;
+
+    int actionSpeed;
 
     public GameObject attackRange;
+    public GameObject jumpAttackRange;
+    public GameObject shockPrefab;
     public Image hpBar;
     public SpriteRenderer backGround;
     public Material WhiteFlashMaterial;
@@ -40,6 +46,9 @@ public class BossScript : MonoBehaviour
         animator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         sprRend = GetComponent<SpriteRenderer>();
+        target = GameObject.FindWithTag("Player").transform;
+
+        actionSpeed = 1;
 
         originMaterial = sprRend.material;
 
@@ -48,54 +57,144 @@ public class BossScript : MonoBehaviour
         phaseIdx = 0;
         lookDir = Dir.Left;
         actionBreakTime = actionTerm;
-        dashCount = 0;
+        patternCount = 0;
+
         hp = maxHp;
         UpdateHpBar();
     }
 
     private void Update()
     {
-
-        Debug.Log(sprRend.color.a);
         if (hp <= 0) Die();
-
         actionBreakTime -= Time.deltaTime;
         if (actionBreakTime > 0) return;
 
         if (isInPattern) return;
         isInPattern = true;
 
-        if (dashCount == 0)
-        {
-            LockOn();
-            Dash();
-        }
+        LockOn();
 
+        int patternIdx = Random.Range(0, 3);
+
+        switch (patternIdx)
+        {
+            case 0:
+                Dash();
+                break;
+            case 1:
+                Jump();
+                break;
+            case 2:
+                Smash();
+                break;
+            default:
+                break;
+        }
     }
 
     private void Dash()
     {
-        dashCount++;
-        animator.SetInteger("dashState", dashCount);
-        switch (dashCount)
+        patternCount++;
+        animator.SetInteger("dashState", patternCount);
+        switch (patternCount)
         {
             case 2:
-                rigid.linearVelocityX = lookDir == Dir.Left ? -dashSpeed : dashSpeed;
+                rigid.linearVelocityX = lookDir == Dir.Left ? -dashSpeed * actionSpeed : dashSpeed * actionSpeed;
                 attackRange.SetActive(true);
                 break;
             case 3:
                 rigid.linearVelocityX = 0;
                 attackRange.SetActive(false);
-                dashCount = 0;
+                patternCount = 0;
                 EndPattern();
                 break;
             default:
                 break;
         }
     }
+
+    private void Jump()
+    {
+        patternCount++;
+        animator.SetInteger("jumpState", patternCount);
+        switch (patternCount)
+        {
+            case 2:
+                rigid.linearVelocityX = (target.position.x - transform.position.x) * actionSpeed;
+                rigid.linearVelocityY = jumpPower;
+                break;
+            case 3:
+                rigid.linearVelocityX = 0;
+                patternCount = 0;
+                EndPattern();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void Smash()
+    {
+        patternCount++;
+        animator.SetInteger("smashState", patternCount);
+        switch (patternCount)
+        {
+            case 2:
+                LockOn();
+                break;
+            case 3:
+                LockOn();
+                patternCount = 0;
+                EndPattern();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void ThrowShock()
+    {
+        shockPrefab.GetComponent<ShockScript>().direction = lookDir == Dir.Left ? -1 : 1;
+        GameObject shock = Instantiate(shockPrefab, jumpAttackRange.transform.position, Quaternion.identity);
+    }
+
+    private void RecoveryAttack()
+    {
+        patternCount++;
+        animator.SetInteger("recoveryState", patternCount);
+        switch (patternCount)
+        {
+            case 2:
+                StartCoroutine(RecoveryDash());
+                break;
+            case 3:
+            case 4:
+                LockOn();
+                break;
+            case 5:
+                LockOn();
+                patternCount = 0;
+                break;
+            default:
+                break;
+        }
+    }
+
+    private IEnumerator RecoveryDash()
+    {
+        attackRange.SetActive(true);
+        isOnWall = false;
+
+        while (!isOnWall)
+        {
+            rigid.linearVelocityX = lookDir == Dir.Left ? -dashSpeed * actionSpeed : dashSpeed * actionSpeed;
+            yield return null;
+        }
+        RecoveryAttack();
+    }
+
     private void LockOn()
     {
-        target = GameObject.FindWithTag("Player").transform;
         if (target.position.x < transform.position.x)
         {
             lookDir = Dir.Left;
@@ -113,11 +212,14 @@ public class BossScript : MonoBehaviour
     }
     private void Die()
     {
-        rigid.linearVelocity = Vector2.zero;
+        actionSpeed = 1;
+        animator.speed = actionSpeed;
+
+        StopPattern();
+
         animator.Play("Die");
         gameObject.layer = LayerMask.NameToLayer("Dead");
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Dead"));
-        attackRange.SetActive(false);
         GetComponent<BossScript>().enabled = false;
     }
     public void TakeDamage(int damage = 1)
@@ -150,8 +252,7 @@ public class BossScript : MonoBehaviour
 
     private IEnumerator Groggy()
     {
-        rigid.linearVelocity = Vector2.zero;
-        dashCount = 0;
+        StopPattern();
         animator.Play("Groggy1");
         atkCount = 0;
         float groggyTimer = 5f;
@@ -163,6 +264,28 @@ public class BossScript : MonoBehaviour
         }
         animator.Play("Groggy3");
         if (phaseIdx == 2) StartCoroutine(FadeOut(backGround, 3f));
+        //LevelUp();
+    }
+
+    private void LevelUp()
+    {
+        animator.speed = ++actionSpeed;
+        actionTerm -= 1;
+        rigid.gravityScale = 5 * actionSpeed;
+    }
+
+    private void StopPattern()
+    {
+        rigid.linearVelocity = Vector2.zero;
+        patternCount = 0;
+
+        attackRange.SetActive(false);
+        jumpAttackRange.SetActive(false);
+        
+        animator.SetInteger("dashState", patternCount);
+        animator.SetInteger("jumpState", patternCount);
+        animator.SetInteger("smashState", patternCount);
+        animator.SetInteger("recoveryState", patternCount);
     }
 
     private IEnumerator FadeOut(SpriteRenderer sprRend, float timer)
@@ -193,6 +316,14 @@ public class BossScript : MonoBehaviour
                 collision.GetComponentInParent<PlayerScript>().playerData
                 .attackHealEnergyAmount);
             collision.GetComponent<Collider2D>().enabled = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Wall"))
+        {
+            isOnWall = true;
         }
     }
 }

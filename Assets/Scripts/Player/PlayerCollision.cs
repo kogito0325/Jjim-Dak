@@ -24,6 +24,12 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.collider.CompareTag("Boss"))
         {
+            if (playerCombat.isGuarding) playerCombat.CounterAttack(collision.gameObject.GetComponent<BossScript>());
+            else playerHealth.TakeDamage();
+        }
+
+        if (collision.collider.CompareTag("BossAtk"))
+        {
             if (playerCombat.isGuarding) playerCombat.CounterAttack();
             else playerHealth.TakeDamage();
         }

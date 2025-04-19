@@ -72,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
             isDashing = true;
             isPossibleToDash = false;
             xVelocity = (transform.rotation.y == 0 ? 1 : -1) * playerData.dashSpeed;
-            Debug.Log(xVelocity);
             rigidBody.linearVelocityX = xVelocity;
 
             Invoke("EndDash", playerData.dashDurationTime);

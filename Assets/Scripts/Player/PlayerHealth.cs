@@ -52,7 +52,9 @@ public class PlayerHealth : MonoBehaviour
             blinkTimer -= 0.12f;
         }
         GetComponent<SpriteRenderer>().color = Color.white;
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
+
+        if (isAlive)
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
     }
 
     private void Blink()
@@ -67,6 +69,7 @@ public class PlayerHealth : MonoBehaviour
         isAlive = false;
         playerAni.Play(PlayerAnimState.DEAD);
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"));
+        GetComponent<Rigidbody2D>().linearVelocityX = 0;
     }
     private void UpdateHearts()
     {

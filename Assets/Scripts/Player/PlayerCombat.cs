@@ -82,11 +82,12 @@ public class PlayerCombat : MonoBehaviour
         playerAni.Play(PlayerAnimState.GUARD);
     }
 
-    public void CounterAttack()
+    public void CounterAttack(BossScript boss = null)
     {
         Debug.Log("Counter");
         playerStemina.HealEnergy(playerData.guardHealEnergyAmount);
-        FindAnyObjectByType<BossScript>().TakeDamage(playerData.counterDamage);
+        if (boss)
+            boss.TakeDamage(playerData.counterDamage);
         isGuarding = false;
         playerHealth.TakeDamage(0);
         playerAni.SwitchAnimType();
