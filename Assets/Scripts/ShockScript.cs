@@ -5,10 +5,13 @@ public class ShockScript : MonoBehaviour
 {
     PlayerScript target;
     public float direction;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float speed;
+
+
     void Start()
     {
         target = FindAnyObjectByType<PlayerScript>();
+        speed = direction * target.playerData.speed / 2;
         StartCoroutine(ShockWave());
     }
 
@@ -17,14 +20,18 @@ public class ShockScript : MonoBehaviour
         while (transform.localScale.x < 3f)
         {
             transform.localScale += Vector3.right * Time.deltaTime;
+            speed *= 1 + Time.deltaTime;
+            GetComponent<Rigidbody2D>().linearVelocityX = speed * (transform.localScale.x / transform.localScale.y);
+
             yield return null;
         }
-        GetComponent<Rigidbody2D>().linearVelocityX = direction * target.playerData.speed * 2f;
+
+        GetComponent<Rigidbody2D>().linearVelocityX = speed;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("Wall"))
+        if (collision.CompareTag("Wall"))
             Destroy(gameObject);
     }
 }

@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerStemina playerStemina;
     private PlayerAniManager playerAnim;
     private PlayerCombat playerCombat;
+    private PlayerHealth playerHealth;
 
     private float inputX;
     private float xVelocity;
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         playerStemina = GetComponent<PlayerStemina>();
         playerAnim = GetComponent<PlayerAniManager>();
         playerCombat = GetComponent<PlayerCombat>();
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     private void Update()
@@ -80,7 +82,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void EndDash()
     {
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
+        if (playerHealth.blinkTimer <= 0)
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
         isDashing = false;
         rigidBody.linearVelocityX = 0;
         rigidBody.gravityScale = tempGravity;

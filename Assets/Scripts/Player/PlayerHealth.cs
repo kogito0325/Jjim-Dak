@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public Image[] hearts;
     public int hp { get; private set; }
     public bool isAlive { get; set; } = true;
+    public float blinkTimer = 0;
 
     private void Start()
     {
@@ -32,22 +33,28 @@ public class PlayerHealth : MonoBehaviour
         {
             Die();
         }
-        if (damage >= 0)  // 데미지를 입었을 때, 방어 성공 했을 때
-            StartCoroutine(ProtectState());
+        if (damage > 0)  // 데미지를 입었을 때
+            StartCoroutine(ProtectState(true));
+        else if (damage == 0)  // 방어했을 때
+            StartCoroutine(ProtectState(false));
     }
 
-    private IEnumerator ProtectState()
+    private IEnumerator ProtectState(bool isDamaged)
     {
-        Time.timeScale = 0f;
+        if (blinkTimer > 0) yield break;
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"));
-        yield return new WaitForSecondsRealtime(0.4f);
+        if (isDamaged)
+        {
+            Time.timeScale = 0f;
+            yield return new WaitForSecondsRealtime(0.4f);
+            Time.timeScale = 1f;
+        }
 
-        Time.timeScale = 1f;
+        InitBlinkTimer();
 
-        float blinkTimer = playerData.protectTime;
         while (blinkTimer > 0)
         {
-            Blink();
+            if(isDamaged) Blink();
             yield return new WaitForSeconds(0.12f);
             blinkTimer -= 0.12f;
         }
@@ -61,6 +68,11 @@ public class PlayerHealth : MonoBehaviour
     {
         SpriteRenderer sprRend = GetComponent<SpriteRenderer>();
         sprRend.color = sprRend.color == Color.white ? Color.gray : Color.white;
+    }
+
+    public void InitBlinkTimer()
+    {
+        blinkTimer = playerData.protectTime;
     }
 
 

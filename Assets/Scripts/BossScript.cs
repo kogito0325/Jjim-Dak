@@ -29,6 +29,7 @@ public class BossScript : MonoBehaviour
     public GameObject attackRange;
     public GameObject jumpAttackRange;
     public GameObject shockPrefab;
+    public Transform shockSpot;
     public Image hpBar;
     public SpriteRenderer backGround;
     public Material WhiteFlashMaterial;
@@ -143,7 +144,6 @@ public class BossScript : MonoBehaviour
                 LockOn();
                 break;
             case 3:
-                LockOn();
                 patternCount = 0;
                 EndPattern();
                 break;
@@ -155,7 +155,7 @@ public class BossScript : MonoBehaviour
     public void ThrowShock()
     {
         shockPrefab.GetComponent<ShockScript>().direction = lookDir == Dir.Left ? -1 : 1;
-        GameObject shock = Instantiate(shockPrefab, jumpAttackRange.transform.position, Quaternion.identity);
+        GameObject shock = Instantiate(shockPrefab, shockSpot.position, Quaternion.identity);
     }
 
     private void RecoveryAttack()
@@ -164,6 +164,9 @@ public class BossScript : MonoBehaviour
         animator.SetInteger("recoveryState", patternCount);
         switch (patternCount)
         {
+            case 1:
+                LockOn();
+                break;
             case 2:
                 StartCoroutine(RecoveryDash());
                 break;
@@ -172,7 +175,6 @@ public class BossScript : MonoBehaviour
                 LockOn();
                 break;
             case 5:
-                LockOn();
                 patternCount = 0;
                 break;
             default:
@@ -190,6 +192,7 @@ public class BossScript : MonoBehaviour
             rigid.linearVelocityX = lookDir == Dir.Left ? -dashSpeed * actionSpeed : dashSpeed * actionSpeed;
             yield return null;
         }
+        attackRange.SetActive(false);
         RecoveryAttack();
     }
 
@@ -219,11 +222,12 @@ public class BossScript : MonoBehaviour
 
         animator.Play("Die");
         gameObject.layer = LayerMask.NameToLayer("Dead");
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Dead"));
+
         GetComponent<BossScript>().enabled = false;
     }
     public void TakeDamage(int damage = 1)
     {
+        if (hp <= 0) return;
         hp -= damage;
         UpdateHpBar();
 
@@ -316,6 +320,7 @@ public class BossScript : MonoBehaviour
                 collision.GetComponentInParent<PlayerScript>().playerData
                 .attackHealEnergyAmount);
             collision.GetComponent<Collider2D>().enabled = false;
+            FindAnyObjectByType<CameraScript>().ShakeLittleCamera(0.2f);
         }
     }
 

@@ -39,7 +39,12 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.CompareTag("BossAtk"))
         {
-            collision.gameObject.SetActive(false);
+            if (collision.GetComponent<ShockScript>() != null)
+            {
+                collision.enabled = false;
+                Destroy(collision.gameObject, 5f);
+            }
+            else collision.gameObject.SetActive(false);
             if (playerCombat.isGuarding) playerCombat.CounterAttack();
             else playerHealth.TakeDamage();
         }

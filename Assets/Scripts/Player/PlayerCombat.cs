@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public GameObject attackRange;
+    public GameObject healObject;
 
     private PlayerAniManager playerAni;
     private PlayerData playerData;
@@ -92,6 +93,7 @@ public class PlayerCombat : MonoBehaviour
         playerHealth.TakeDamage(0);
         playerAni.SwitchAnimType();
         playerAni.Play(PlayerAnimState.COUNTER);
+        FindAnyObjectByType<CameraScript>().EffectCamera();
     }
 
     public void Heal()
@@ -105,8 +107,7 @@ public class PlayerCombat : MonoBehaviour
         isHealing = true;
         float healTimer = playerData.healTime;
 
-        playerAni.animator.SetBool("isHealing", isHealing);
-        playerAni.Play(PlayerAnimState.HEAL);
+        playerAni.Play(HealAnimState.HEALSTART, healObject);
 
         while (isHealing && healTimer > 0)
         {
@@ -123,13 +124,14 @@ public class PlayerCombat : MonoBehaviour
         {
             playerStemina.SpendEnergy(playerData.healEnergy);
             playerHealth.TakeDamage(-playerData.healAmount);
+            playerAni.Play(HealAnimState.HEALEND, healObject);
             Debug.Log("Healing Success");
         }
         else
         {
+            playerAni.Play(HealAnimState.IDLE, healObject);
             Debug.Log("Healing Cancled");
         }
         isHealing = false;
-        playerAni.animator.SetBool("isHealing", isHealing);
     }
 }

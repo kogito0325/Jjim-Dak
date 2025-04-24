@@ -15,7 +15,7 @@ MonoBehaviour:
   maxHp: 5
   maxEnergy: 60
   energyHealAmount: 1
-  speed: 10
+  speed: 7
   jumpPower: 18
   attackDurationTime: 0.5
   attackHealEnergyAmount: 4

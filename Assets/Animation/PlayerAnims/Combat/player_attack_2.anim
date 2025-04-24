@@ -65,7 +65,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.6666667
+        time: 0.4
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -110,9 +110,9 @@ AnimationClip:
     curve:
     - time: 0.2
       value: {fileID: 1416461382, guid: 92811ccec0cc62c48a8ad878495a6427, type: 3}
-    - time: 0.33333334
+    - time: 0.25
       value: {fileID: 1793237937, guid: 92811ccec0cc62c48a8ad878495a6427, type: 3}
-    - time: 0.51666665
+    - time: 0.33333334
       value: {fileID: -1059041317, guid: 92811ccec0cc62c48a8ad878495a6427, type: 3}
     attribute: m_Sprite
     path: attackRange
@@ -304,7 +304,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.6666667
+        time: 0.4
         value: 0
         inSlope: Infinity
         outSlope: Infinity

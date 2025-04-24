@@ -15,11 +15,18 @@ public enum PlayerAnimState
     COUNTER
 }
 
+public enum HealAnimState
+{
+    IDLE,
+    HEALSTART,
+    HEALEND
+}
+
 public class PlayerAniManager : MonoBehaviour
 {
     public Animator animator { get; private set; }
 
-    private Dictionary<PlayerAnimState, string> animationNames = new Dictionary<PlayerAnimState, string>()
+    private Dictionary<PlayerAnimState, string> playerAnimNames = new Dictionary<PlayerAnimState, string>()
     {
         { PlayerAnimState.IDLE, "Idle" },
         { PlayerAnimState.MOVE, "Move" },
@@ -33,6 +40,13 @@ public class PlayerAniManager : MonoBehaviour
         { PlayerAnimState.COUNTER, "Counter" }
     };
 
+    private Dictionary<HealAnimState, string> healAnimNames = new Dictionary<HealAnimState, string>()
+    {
+        {HealAnimState.IDLE, "Idle" },
+        {HealAnimState.HEALSTART, "HealStart" },
+        {HealAnimState.HEALEND, "HealEnd" }
+    };
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -40,7 +54,12 @@ public class PlayerAniManager : MonoBehaviour
 
     public void Play(PlayerAnimState state)
     {
-        animator.Play(animationNames[state]);
+        animator.Play(playerAnimNames[state]);
+    }
+
+    public void Play(HealAnimState state, GameObject obj)
+    {
+        obj.GetComponent<Animator>().Play(healAnimNames[state]);
     }
 
 

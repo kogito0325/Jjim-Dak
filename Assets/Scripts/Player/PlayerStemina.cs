@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class PlayerStemina : MonoBehaviour
 {
     PlayerData playerData;
-    public Image[] energySprites;
+    public Image energySprite;
     private float energy;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -45,13 +45,6 @@ public class PlayerStemina : MonoBehaviour
 
     private void UpdateEnergy()
     {
-        float energyUnit = playerData.maxEnergy / energySprites.Length;
-
-        for (int i = 0; i < energySprites.Length; i++)
-        {
-            energySprites[i].fillAmount = Mathf.Clamp((energy - energyUnit * i) / energyUnit, 0, 1);
-            if (energySprites[i].fillAmount < 1f) energySprites[i].color = new Color(1, 1, 1, 0.1f);
-            else energySprites[i].color = Color.white;
-        }
+        energySprite.fillAmount = energy / playerData.maxEnergy;
     }
 }
