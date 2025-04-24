@@ -321,6 +321,7 @@ public class BossScript : MonoBehaviour
                 .attackHealEnergyAmount);
             collision.GetComponent<Collider2D>().enabled = false;
             FindAnyObjectByType<CameraScript>().ShakeLittleCamera(0.2f);
+            collision.GetComponentInParent<PlayerSoundManager>().Play("Hit");
         }
     }
 

@@ -10,6 +10,8 @@ public class PlayerCombat : MonoBehaviour
     private PlayerData playerData;
     private PlayerHealth playerHealth;
     private PlayerStemina playerStemina;
+    private PlayerSoundManager playerSound;
+
     private Rigidbody2D rigid;
 
     private float atkTimer;
@@ -26,6 +28,8 @@ public class PlayerCombat : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
         playerAni = GetComponent<PlayerAniManager>();
         playerStemina = GetComponent<PlayerStemina>();
+        playerSound = GetComponent<PlayerSoundManager>();
+
         rigid = GetComponent<Rigidbody2D>();
         nextAtkTime = 0f;
         guardCoolTimer = 0f;
@@ -61,11 +65,13 @@ public class PlayerCombat : MonoBehaviour
             {
                 playerAni.Play(PlayerAnimState.ATTACK);
                 nextAtkTime = atkTimer + 0.3f;
+                playerSound.Play("Attack");
             }
             else
             {
                 playerAni.Play(PlayerAnimState.ATTACK2);
                 nextAtkTime = 0f;
+                playerSound.Play("Attack2");
             }
         }
     }
@@ -93,6 +99,7 @@ public class PlayerCombat : MonoBehaviour
         playerHealth.TakeDamage(0);
         playerAni.SwitchAnimType();
         playerAni.Play(PlayerAnimState.COUNTER);
+        playerSound.Play("Counter");
         FindAnyObjectByType<CameraScript>().EffectCamera();
     }
 

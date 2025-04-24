@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.U2D;
 
 public class CameraScript : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class CameraScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
         if (Time.timeScale == 0) return;
-        targetPosition = new Vector3(Mathf.Clamp(player.position.x, -3.6f, 3.6f), 0, originZ);
+        targetPosition = new Vector3(Mathf.Clamp(player.position.x, -3f, 3f), 0, originZ);
         if (curShakeTime <= 0)
         {
             float followSpeed = Mathf.Max(Time.deltaTime * Vector2.Distance(transform.position, targetPosition), minFollowSpeed);
@@ -40,6 +41,7 @@ public class CameraScript : MonoBehaviour
         }
         transform.position += Vector3.back * 10;
         GetComponent<Camera>().orthographicSize = Mathf.Lerp(GetComponent<Camera>().orthographicSize, orizinSize, Time.deltaTime*10);
+        GetComponent<PixelPerfectCamera>().assetsPPU = (int)Mathf.Lerp(GetComponent<PixelPerfectCamera>().assetsPPU, 100, Time.deltaTime*5);
     }
 
     public void ShakeCamera(float time = 0)
@@ -57,6 +59,6 @@ public class CameraScript : MonoBehaviour
     public void EffectCamera()
     {
         GetComponent<Camera>().orthographicSize = 4.7f;
+        GetComponent<PixelPerfectCamera>().assetsPPU = 110;
     }
-
 }
