@@ -1,21 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerStemina : MonoBehaviour
+public class PlayerStemina
 {
     PlayerData playerData;
     public Image energySprite;
     private float energy;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public PlayerStemina(PlayerData playerData, Image image)
     {
-        playerData = GetComponent<PlayerScript>().playerData;
+        this.playerData = playerData;
         energy = playerData.maxEnergy;
+        energySprite = image;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void UpdateStemina()
     {
         HealEnergy();
         UpdateEnergy();

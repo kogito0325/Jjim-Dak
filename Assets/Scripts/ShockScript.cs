@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class ShockScript : MonoBehaviour
 {
-    PlayerScript target;
+    PlayerMachine target;
     public float direction;
     public float speed;
 
 
     void Start()
     {
-        target = FindAnyObjectByType<PlayerScript>();
+        target = FindAnyObjectByType<PlayerMachine>();
         speed = direction * target.playerData.speed / 2;
         StartCoroutine(ShockWave());
     }
@@ -25,7 +25,6 @@ public class ShockScript : MonoBehaviour
 
             yield return null;
         }
-
         GetComponent<Rigidbody2D>().linearVelocityX = speed;
     }
 

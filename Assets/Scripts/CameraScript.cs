@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.U2D;
 
 public class CameraScript : MonoBehaviour

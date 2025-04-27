@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement
 {
+    private Transform playerTransform;
     private PlayerData playerData;
     private Rigidbody2D rigidBody;
     private PlayerStemina playerStemina;
@@ -17,29 +19,38 @@ public class PlayerMovement : MonoBehaviour
     public bool isJumping;
     public bool isPossibleToDash;
 
-    private void Start()
+    public PlayerMovement(PlayerMachine player, Rigidbody2D rigid)
     {
-        rigidBody = GetComponent<Rigidbody2D>();
-        playerData = GetComponent<PlayerScript>().playerData;
-        playerStemina = GetComponent<PlayerStemina>();
-        playerAnim = GetComponent<PlayerAniManager>();
-        playerCombat = GetComponent<PlayerCombat>();
-        playerHealth = GetComponent<PlayerHealth>();
+        playerData = player.playerData;
+
+        rigidBody = rigid;
+        playerTransform = player.transform;
+        playerStemina = player.playerStemina;
+        playerAnim = player.playerAniManager;
+        playerCombat = player.playerCombat;
+        playerHealth = player.playerHealth;
+
+        isGrounded = true;
+        isDashing = false;
+        isJumping = false;
+        isPossibleToDash = true;
     }
 
-    private void Update()
+    public void UpdateDir(Transform transform, float inputX)
     {
         if (inputX > 0) transform.rotation = Quaternion.Euler(Vector2.zero);
         else if (inputX < 0) transform.rotation = Quaternion.Euler(Vector2.up * 180f);
+        if (isDashing) rigidBody.linearVelocityY = 0;
+        UpdateAnim();
+    }
+
+    public void UpdateAnim()
+    {
         playerAnim.animator.SetFloat("yVelocity", rigidBody.linearVelocityY);
         playerAnim.animator.SetBool("isGround", isGrounded);
         playerAnim.animator.SetBool("isMoving", inputX != 0);
     }
 
-    private void FixedUpdate()
-    {
-        if (isDashing) rigidBody.linearVelocityY = 0;
-    }
 
     public void Move(float inputX)
     {
@@ -48,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
         xVelocity = inputX * playerData.speed;
         rigidBody.linearVelocityX = xVelocity;
         if (inputX != 0 && isGrounded) playerAnim.Play(PlayerAnimState.MOVE);
+
+        UpdateDir(playerTransform, inputX);
     }
 
     public void Jump()
@@ -62,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
     float tempGravity;
 
-    public void Dash()
+    public void Dash(Transform transform)
     {
         if (!isDashing && isPossibleToDash)
         {
@@ -76,19 +89,22 @@ public class PlayerMovement : MonoBehaviour
             xVelocity = (transform.rotation.y == 0 ? 1 : -1) * playerData.dashSpeed;
             rigidBody.linearVelocityX = xVelocity;
 
-            Invoke("EndDash", playerData.dashDurationTime);
+            transform.GetComponent<PlayerMachine>().StartCoroutine(EndDash(transform));
         }
     }
 
-    private void EndDash()
+    private IEnumerator EndDash(Transform transform)
     {
+        yield return new WaitForSeconds(playerData.dashDurationTime);
+
         if (playerHealth.blinkTimer <= 0)
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
         isDashing = false;
         rigidBody.linearVelocityX = 0;
         rigidBody.gravityScale = tempGravity;
 
-        Invoke("EnableDash", playerData.dashCoolTime);
+        yield return new WaitForSeconds(playerData.dashCoolTime);
+        EnableDash();
     }
 
     private void EnableDash()

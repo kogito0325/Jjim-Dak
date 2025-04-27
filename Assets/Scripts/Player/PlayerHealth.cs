@@ -2,26 +2,32 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth
 {
+    private PlayerMachine playerMachine;
     private PlayerData playerData;
     private PlayerAniManager playerAni;
-    public Image[] hearts;
+    private Image[] hearts;
     public int hp { get; private set; }
-    public bool isAlive { get; set; } = true;
+    public bool isAlive { get; set; }
     public float blinkTimer = 0;
 
-    private void Start()
+
+    public PlayerHealth(PlayerMachine player, PlayerAniManager playerAni)
     {
-        playerData = GetComponent<PlayerScript>().playerData;
-        playerAni = GetComponent<PlayerAniManager>();
+        playerMachine = player;
+        playerData = player.playerData;
+        this.playerAni = playerAni;
+        hearts = player.hearts;
+
         hp = playerData.maxHp;
+        isAlive = true;
     }
 
     public void TakeDamage(int damage = 1)
     {
         if (damage > 0)  // 데미지를 입었을 때
-            FindAnyObjectByType<CameraScript>().ShakeCamera();
+            Object.FindAnyObjectByType<CameraScript>().ShakeCamera();
 
         hp -= damage;
         if (damage > 0)
@@ -34,9 +40,9 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
         if (damage > 0)  // 데미지를 입었을 때
-            StartCoroutine(ProtectState(true));
+            playerMachine.StartCoroutine(ProtectState(true));
         else if (damage == 0)  // 방어했을 때
-            StartCoroutine(ProtectState(false));
+            playerMachine.StartCoroutine(ProtectState(false));
     }
 
     private IEnumerator ProtectState(bool isDamaged)
@@ -58,7 +64,7 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(0.12f);
             blinkTimer -= 0.12f;
         }
-        GetComponent<SpriteRenderer>().color = Color.white;
+        playerMachine.GetComponent<SpriteRenderer>().color = Color.white;
 
         if (isAlive)
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
@@ -66,7 +72,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Blink()
     {
-        SpriteRenderer sprRend = GetComponent<SpriteRenderer>();
+        SpriteRenderer sprRend = playerMachine.GetComponent<SpriteRenderer>();
         sprRend.color = sprRend.color == Color.white ? Color.gray : Color.white;
     }
 
@@ -81,7 +87,7 @@ public class PlayerHealth : MonoBehaviour
         isAlive = false;
         playerAni.Play(PlayerAnimState.DEAD);
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"));
-        GetComponent<Rigidbody2D>().linearVelocityX = 0;
+        playerMachine.GetComponent<Rigidbody2D>().linearVelocityX = 0;
     }
     private void UpdateHearts()
     {

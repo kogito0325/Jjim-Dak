@@ -9,10 +9,7 @@ public enum PlayerAnimState
     DASH,
     ATTACK,
     ATTACK2,
-    DEAD,
-    HEAL,
-    GUARD,
-    COUNTER
+    DEAD
 }
 
 public enum HealAnimState
@@ -22,7 +19,14 @@ public enum HealAnimState
     HEALEND
 }
 
-public class PlayerAniManager : MonoBehaviour
+public enum GuardAnimState
+{
+    IDLE,
+    GUARD,
+    COUNTER
+}
+
+public class PlayerAniManager
 {
     public Animator animator { get; private set; }
 
@@ -34,22 +38,26 @@ public class PlayerAniManager : MonoBehaviour
         { PlayerAnimState.DASH, "Dash" },
         { PlayerAnimState.ATTACK, "Attack" },
         { PlayerAnimState.ATTACK2, "Attack2" },
-        { PlayerAnimState.DEAD, "Dead" },
-        { PlayerAnimState.HEAL, "Heal" },
-        { PlayerAnimState.GUARD, "Guard" },
-        { PlayerAnimState.COUNTER, "Counter" }
+        { PlayerAnimState.DEAD, "Dead" }
     };
 
     private Dictionary<HealAnimState, string> healAnimNames = new Dictionary<HealAnimState, string>()
     {
-        {HealAnimState.IDLE, "Idle" },
-        {HealAnimState.HEALSTART, "HealStart" },
-        {HealAnimState.HEALEND, "HealEnd" }
+        { HealAnimState.IDLE, "Idle" },
+        { HealAnimState.HEALSTART, "HealStart" },
+        { HealAnimState.HEALEND, "HealEnd" }
     };
 
-    private void Start()
+    private Dictionary<GuardAnimState, string> guardAnimNames = new Dictionary<GuardAnimState, string>()
     {
-        animator = GetComponent<Animator>();
+        { GuardAnimState.IDLE, "Idle" },
+        { GuardAnimState.GUARD, "Guard" },
+        { GuardAnimState.COUNTER, "Counter"}
+    };
+
+    public PlayerAniManager(Animator animator)
+    {
+        this.animator = animator;
     }
 
     public void Play(PlayerAnimState state)
@@ -61,6 +69,12 @@ public class PlayerAniManager : MonoBehaviour
     {
         obj.GetComponent<Animator>().Play(healAnimNames[state]);
     }
+
+    public void Play(GuardAnimState state, GameObject obj)
+    {
+        obj.GetComponent<Animator>().Play(guardAnimNames[state]);
+    }
+
 
 
     public void SwitchAnimType()

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
 public enum PlayerSoundState
 {
     ATTACK,
@@ -8,10 +7,9 @@ public enum PlayerSoundState
     Hit,
     Counter
 }
-
-public class PlayerSoundManager : MonoBehaviour
+public class PlayerSoundManager
 {
-    public AudioClip[] audioClips;
+    private AudioClip[] audioClips;
     private AudioSource audioSource;
 
     private Dictionary<string, PlayerSoundState> playerSoundNames = new Dictionary<string, PlayerSoundState>()
@@ -22,10 +20,10 @@ public class PlayerSoundManager : MonoBehaviour
         { "Counter", PlayerSoundState.Counter }
     };
 
-
-    private void Start()
+    public PlayerSoundManager(AudioClip[] audioClips, AudioSource audioSource)
     {
-        audioSource = GetComponent<AudioSource>();
+        this.audioClips = audioClips;
+        this.audioSource = audioSource;
     }
 
     public void Play(string state)

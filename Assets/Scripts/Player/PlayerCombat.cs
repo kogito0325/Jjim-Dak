@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class PlayerCombat : MonoBehaviour
+public class PlayerCombat
 {
-    public GameObject attackRange;
-    public GameObject healObject;
 
+    private PlayerMachine PlayerMachine;
     private PlayerAniManager playerAni;
     private PlayerData playerData;
     private PlayerHealth playerHealth;
     private PlayerStemina playerStemina;
     private PlayerSoundManager playerSound;
 
+    private GameObject attackRange;
+    private GameObject healObject;
+    private GameObject guardObject;
     private Rigidbody2D rigid;
 
     private float atkTimer;
@@ -22,20 +24,26 @@ public class PlayerCombat : MonoBehaviour
     public bool isHealing { get; private set; }
     public bool isGuarding { get; private set; }
 
-    private void Start()
+    public PlayerCombat(PlayerMachine playerMachine, Rigidbody2D rigidbody)
     {
-        playerData = GetComponent<PlayerScript>().playerData;
-        playerHealth = GetComponent<PlayerHealth>();
-        playerAni = GetComponent<PlayerAniManager>();
-        playerStemina = GetComponent<PlayerStemina>();
-        playerSound = GetComponent<PlayerSoundManager>();
+        PlayerMachine = playerMachine;
+        playerData = playerMachine.playerData;
+        playerHealth = playerMachine.playerHealth;
+        playerAni = playerMachine.playerAniManager;
+        playerStemina= playerMachine.playerStemina;
+        playerSound = playerMachine.playerSoundManager;
 
-        rigid = GetComponent<Rigidbody2D>();
+        rigid = rigidbody;
+
+        attackRange = playerMachine.attackRange;
+        healObject = playerMachine.healObject;
+        guardObject = playerMachine.guardObject;
+
         nextAtkTime = 0f;
         guardCoolTimer = 0f;
     }
 
-    private void Update()
+    public void Update()
     {
         if (atkTimer > 0)
             atkTimer -= Time.deltaTime;
@@ -86,7 +94,7 @@ public class PlayerCombat : MonoBehaviour
         isGuarding = true;   
         guardTimer = playerData.attackDurationTime;
         guardCoolTimer = playerData.guardCoolTime;
-        playerAni.Play(PlayerAnimState.GUARD);
+        playerAni.Play(GuardAnimState.GUARD, guardObject);
     }
 
     public void CounterAttack(BossScript boss = null)
@@ -97,16 +105,15 @@ public class PlayerCombat : MonoBehaviour
             boss.TakeDamage(playerData.counterDamage);
         isGuarding = false;
         playerHealth.TakeDamage(0);
-        playerAni.SwitchAnimType();
-        playerAni.Play(PlayerAnimState.COUNTER);
+        playerAni.Play(GuardAnimState.COUNTER, guardObject);
         playerSound.Play("Counter");
-        FindAnyObjectByType<CameraScript>().EffectCamera();
+        Object.FindAnyObjectByType<CameraScript>().EffectCamera();
     }
 
     public void Heal()
     {
         if (playerHealth.hp < playerData.maxHp)
-            StartCoroutine(HealState());
+            PlayerMachine.StartCoroutine(HealState());
     }
 
     private IEnumerator HealState()

@@ -23,6 +23,7 @@ public class BossScript : MonoBehaviour
     int atkCount;
     bool isInPattern;
     bool isOnWall;
+    bool isJumping;
 
     int actionSpeed;
 
@@ -53,6 +54,7 @@ public class BossScript : MonoBehaviour
 
         originMaterial = sprRend.material;
 
+        isJumping = false;
         isInPattern = false;
         atkCount = 0;
         phaseIdx = 0;
@@ -123,6 +125,7 @@ public class BossScript : MonoBehaviour
             case 2:
                 rigid.linearVelocityX = (target.position.x - transform.position.x) * actionSpeed;
                 rigid.linearVelocityY = jumpPower;
+                isJumping = true;
                 break;
             case 3:
                 rigid.linearVelocityX = 0;
@@ -215,6 +218,7 @@ public class BossScript : MonoBehaviour
     }
     private void Die()
     {
+        StartCoroutine(DeadEffect());
         actionSpeed = 1;
         animator.speed = actionSpeed;
 
@@ -225,6 +229,20 @@ public class BossScript : MonoBehaviour
 
         GetComponent<BossScript>().enabled = false;
     }
+
+    private IEnumerator DeadEffect()
+    {
+        FindAnyObjectByType<CameraScript>().EffectCamera();
+
+        Time.timeScale = 0.01f;
+        while (Time.timeScale < 1)
+        {
+            Time.timeScale += Time.deltaTime;
+            yield return null;
+        }
+        Time.timeScale = 1f;
+    }
+
     public void TakeDamage(int damage = 1)
     {
         if (hp <= 0) return;
@@ -315,13 +333,12 @@ public class BossScript : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerAtk"))
         {
             TakeDamage();
-            collision.GetComponentInParent<PlayerStemina>()
-                .HealEnergy(
-                collision.GetComponentInParent<PlayerScript>().playerData
-                .attackHealEnergyAmount);
+            collision.GetComponentInParent<PlayerMachine>()
+                .playerStemina.HealEnergy(
+                collision.GetComponentInParent<PlayerMachine>().playerData.attackHealEnergyAmount);
             collision.GetComponent<Collider2D>().enabled = false;
             FindAnyObjectByType<CameraScript>().ShakeLittleCamera(0.2f);
-            collision.GetComponentInParent<PlayerSoundManager>().Play("Hit");
+            collision.GetComponentInParent<PlayerMachine>().playerSoundManager.Play("Hit");
         }
     }
 
@@ -330,6 +347,18 @@ public class BossScript : MonoBehaviour
         if (collision.collider.CompareTag("Wall"))
         {
             isOnWall = true;
+        }
+
+        if (collision.collider.CompareTag("Ground"))
+        {
+            if (isJumping)
+            {
+                isJumping = false;
+                if (isInPattern && patternCount == 2)
+                {
+                    Jump();
+                }
+            }
         }
     }
 }
