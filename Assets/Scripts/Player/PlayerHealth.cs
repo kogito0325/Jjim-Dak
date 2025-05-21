@@ -52,7 +52,7 @@ public class PlayerHealth
         if (isDamaged)
         {
             Time.timeScale = 0f;
-            yield return new WaitForSecondsRealtime(0.4f);
+            yield return new WaitForSecondsRealtime(0.2f);
             Time.timeScale = 1f;
         }
 

@@ -29,7 +29,7 @@ public class CameraScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
         if (Time.timeScale == 0) return;
-        targetPosition = new Vector3(Mathf.Clamp(player.position.x, -3f, 3f), 0, originZ);
+        targetPosition = new Vector3(Mathf.Clamp(player.position.x, -6f, 6f), 0, originZ);
         if (curShakeTime <= 0)
         {
             float followSpeed = Mathf.Max(Time.deltaTime * Vector2.Distance(transform.position, targetPosition), minFollowSpeed);

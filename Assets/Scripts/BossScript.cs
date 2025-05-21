@@ -95,6 +95,7 @@ public class BossScript : MonoBehaviour
         }
     }
 
+
     private void Dash()
     {
         patternCount++;
@@ -328,6 +329,18 @@ public class BossScript : MonoBehaviour
         isInPattern = false;
     }
 
+    private void PlaySound()
+    {
+        GetComponent<AudioSource>().Play();
+    }
+
+    private void JumpProduction()
+    {
+        GetComponent<Rigidbody2D>().linearVelocityX = -15f;
+    }
+
+
+    public GameObject Temp;
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("PlayerAtk"))
@@ -339,6 +352,8 @@ public class BossScript : MonoBehaviour
             collision.GetComponent<Collider2D>().enabled = false;
             FindAnyObjectByType<CameraScript>().ShakeLittleCamera(0.2f);
             collision.GetComponentInParent<PlayerMachine>().playerSoundManager.Play("Hit");
+
+            Instantiate(Temp, transform.position, Quaternion.identity);
         }
     }
 

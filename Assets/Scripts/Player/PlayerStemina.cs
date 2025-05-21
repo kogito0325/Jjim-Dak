@@ -45,6 +45,7 @@ public class PlayerStemina
 
     private void UpdateEnergy()
     {
-        energySprite.fillAmount = energy / playerData.maxEnergy;
+        if (energySprite != null)
+            energySprite.fillAmount = energy / playerData.maxEnergy;
     }
 }
