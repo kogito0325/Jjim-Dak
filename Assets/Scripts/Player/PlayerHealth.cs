@@ -26,23 +26,23 @@ public class PlayerHealth
 
     public void TakeDamage(int damage = 1)
     {
-        if (damage > 0)  // 데미지를 입었을 때
-            Object.FindAnyObjectByType<CameraScript>().ShakeCamera();
-
         hp -= damage;
+        
+        // 데미지를 입었을 때
         if (damage > 0)
-            hearts[hp].GetComponent<Animator>().Play($"Disappear{hp}");
-        else
-            UpdateHearts();
-
-        if (hp <= 0)
         {
-            Die();
-        }
-        if (damage > 0)  // 데미지를 입었을 때
+            Object.FindAnyObjectByType<CameraScript>().ShakeCamera();
+            hearts[hp].GetComponent<Animator>().Play($"Disappear{hp}");
             playerMachine.StartCoroutine(ProtectState(true));
-        else if (damage == 0)  // 방어했을 때
-            playerMachine.StartCoroutine(ProtectState(false));
+        }
+        else
+        {
+            UpdateHearts();
+            if (damage == 0)
+                playerMachine.StartCoroutine(ProtectState(false));
+        }
+
+        if (hp <= 0) Die();
     }
 
     private IEnumerator ProtectState(bool isDamaged)
@@ -51,6 +51,8 @@ public class PlayerHealth
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"));
         if (isDamaged)
         {
+            playerMachine.canControl = false;
+            playerAni.Play(PlayerAnimState.HIT);
             Time.timeScale = 0f;
             yield return new WaitForSecondsRealtime(0.2f);
             Time.timeScale = 1f;
@@ -60,6 +62,8 @@ public class PlayerHealth
 
         while (blinkTimer > 0)
         {
+            if (playerData.protectTime - blinkTimer >= playerData.knockBackDurationTime)
+                playerMachine.canControl = true;
             if(isDamaged) Blink();
             yield return new WaitForSeconds(0.12f);
             blinkTimer -= 0.12f;

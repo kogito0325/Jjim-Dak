@@ -89,22 +89,22 @@ public class PlayerCombat
         if (isHealing || isGuarding || rigid.linearVelocity != Vector2.zero) return;
         if (guardCoolTimer > 0) return;
 
-        Debug.Log("Guard");
         playerStemina.SpendEnergy(playerData.guardEnergy);
-        isGuarding = true;   
+        isGuarding = true;
         guardTimer = playerData.attackDurationTime;
         guardCoolTimer = playerData.guardCoolTime;
+        playerAni.Play(PlayerAnimState.GUARD);
         playerAni.Play(GuardAnimState.GUARD, guardObject);
     }
 
     public void CounterAttack(BossScript boss = null)
     {
-        Debug.Log("Counter");
         playerStemina.HealEnergy(playerData.guardHealEnergyAmount);
         if (boss)
             boss.TakeDamage(playerData.counterDamage);
         isGuarding = false;
         playerHealth.TakeDamage(0);
+        playerAni.Play(PlayerAnimState.COUNTER);
         playerAni.Play(GuardAnimState.COUNTER, guardObject);
         playerSound.Play("Counter");
         Object.FindAnyObjectByType<CameraScript>().EffectCamera();

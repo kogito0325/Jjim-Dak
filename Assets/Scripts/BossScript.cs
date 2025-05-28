@@ -110,7 +110,6 @@ public class BossScript : MonoBehaviour
                 rigid.linearVelocityX = 0;
                 attackRange.SetActive(false);
                 patternCount = 0;
-                EndPattern();
                 break;
             default:
                 break;
@@ -131,7 +130,6 @@ public class BossScript : MonoBehaviour
             case 3:
                 rigid.linearVelocityX = 0;
                 patternCount = 0;
-                EndPattern();
                 break;
             default:
                 break;
@@ -149,7 +147,6 @@ public class BossScript : MonoBehaviour
                 break;
             case 3:
                 patternCount = 0;
-                EndPattern();
                 break;
             default:
                 break;
@@ -259,6 +256,8 @@ public class BossScript : MonoBehaviour
         else if (hp <= phase[phaseIdx])
         {
             phaseIdx++;
+            if (phaseIdx == 2)
+                actionTerm = 1f;
             isInPattern = true;
             StartCoroutine(Groggy());
         }
@@ -276,6 +275,10 @@ public class BossScript : MonoBehaviour
     private IEnumerator Groggy()
     {
         StopPattern();
+        Instantiate(Temp2, transform.position, Quaternion.identity);
+        Time.timeScale = 0.2f;
+        yield return new WaitForSecondsRealtime(1f);
+        Time.timeScale = 1f;
         animator.Play("Groggy1");
         atkCount = 0;
         float groggyTimer = 5f;
@@ -341,6 +344,7 @@ public class BossScript : MonoBehaviour
 
 
     public GameObject Temp;
+    public GameObject Temp2;
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("PlayerAtk"))

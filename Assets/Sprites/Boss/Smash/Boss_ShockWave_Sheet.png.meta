@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 18256aa69f88fc2419f21630e34aad77
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8895202990909580732
+    second: Boss_ShockWave_Sheet_0
+  - first:
+      213: 6034728522841342221
+    second: Boss_ShockWave_Sheet_1
+  - first:
+      213: -496340338272669589
+    second: Boss_ShockWave_Sheet_2
+  - first:
+      213: 8586619034906828854
+    second: Boss_ShockWave_Sheet_3
+  - first:
+      213: 129629020209781318
+    second: Boss_ShockWave_Sheet_4
+  - first:
+      213: -4599427556399537410
+    second: Boss_ShockWave_Sheet_5
+  - first:
+      213: 2672616072428082758
+    second: Boss_ShockWave_Sheet_6
+  - first:
+      213: -5225279902503967935
+    second: Boss_ShockWave_Sheet_7
+  - first:
+      213: 5113984706513145578
+    second: Boss_ShockWave_Sheet_8
+  - first:
+      213: -2511931541905749417
+    second: Boss_ShockWave_Sheet_9
+  - first:
+      213: -7468234987249653873
+    second: Boss_ShockWave_Sheet_10
+  - first:
+      213: -7340342268150421076
+    second: Boss_ShockWave_Sheet_11
+  - first:
+      213: -880376969417691123
+    second: Boss_ShockWave_Sheet_12
+  - first:
+      213: -44272757542401947
+    second: Boss_ShockWave_Sheet_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss_ShockWave_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 1667
+        width: 488
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5682ecdfb127b70800000000000000
+      internalID: 8895202990909580732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_ShockWave_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 1667
+        width: 596
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0140ef3e99afb350800000000000000
+      internalID: 6034728522841342221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_ShockWave_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2099
+        y: 1667
+        width: 596
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b607f819715ac19f0800000000000000
+      internalID: -496340338272669589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_ShockWave_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2999
+        y: 1667
+        width: 596
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 630aa35b48cc92770800000000000000
+      internalID: 8586619034906828854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_ShockWave_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 3899
+        y: 1667
+        width: 596
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a9f2638e88cc100800000000000000
+      internalID: 129629020209781318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_ShockWave_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 899
+        width: 596
+        height: 404
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef2a9aa910d8b20c0800000000000000
+      internalID: -4599427556399537410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_ShockWave_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 899
+        width: 584
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6465312682a071520800000000000000
+      internalID: 2672616072428082758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_ShockWave_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2123
+        y: 899
+        width: 560
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14363470d931c77b0800000000000000
+      internalID: -5225279902503967935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_ShockWave_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2891
+        y: 899
+        width: 524
+        height: 590
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aee0f7adef588f640800000000000000
+      internalID: 5113984706513145578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_ShockWave_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 3605
+        y: 899
+        width: 686
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75acb984293d32dd0800000000000000
+      internalID: -2511931541905749417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_ShockWave_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 131
+        width: 662
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8727d5f8df7b5890800000000000000
+      internalID: -7468234987249653873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_ShockWave_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 131
+        width: 536
+        height: 488
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca9eb11199dd12a90800000000000000
+      internalID: -7340342268150421076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_ShockWave_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 131
+        width: 458
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d007c6d8fc548c3f0800000000000000
+      internalID: -880376969417691123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_ShockWave_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2921
+        y: 131
+        width: 488
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 568457d5926b26ff0800000000000000
+      internalID: -44272757542401947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Boss_ShockWave_Sheet_0: 8895202990909580732
+      Boss_ShockWave_Sheet_1: 6034728522841342221
+      Boss_ShockWave_Sheet_10: -7468234987249653873
+      Boss_ShockWave_Sheet_11: -7340342268150421076
+      Boss_ShockWave_Sheet_12: -880376969417691123
+      Boss_ShockWave_Sheet_13: -44272757542401947
+      Boss_ShockWave_Sheet_2: -496340338272669589
+      Boss_ShockWave_Sheet_3: 8586619034906828854
+      Boss_ShockWave_Sheet_4: 129629020209781318
+      Boss_ShockWave_Sheet_5: -4599427556399537410
+      Boss_ShockWave_Sheet_6: 2672616072428082758
+      Boss_ShockWave_Sheet_7: -5225279902503967935
+      Boss_ShockWave_Sheet_8: 5113984706513145578
+      Boss_ShockWave_Sheet_9: -2511931541905749417
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -9,6 +9,9 @@ public enum PlayerAnimState
     DASH,
     ATTACK,
     ATTACK2,
+    HIT,
+    GUARD,
+    COUNTER,
     DEAD
 }
 
@@ -38,6 +41,9 @@ public class PlayerAniManager
         { PlayerAnimState.DASH, "Dash" },
         { PlayerAnimState.ATTACK, "Attack" },
         { PlayerAnimState.ATTACK2, "Attack2" },
+        { PlayerAnimState.HIT, "Hit" },
+        { PlayerAnimState.GUARD, "Guard" },
+        { PlayerAnimState.COUNTER, "Counter" },
         { PlayerAnimState.DEAD, "Dead" }
     };
 

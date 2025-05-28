@@ -23,6 +23,7 @@ public class PlayerMachine : MonoBehaviour
     public GameObject healObject;
     public GameObject guardObject;
 
+    public bool canControl;
     private float inputX;
 
     private void Awake()
@@ -37,21 +38,24 @@ public class PlayerMachine : MonoBehaviour
         playerHealth = new PlayerHealth(this, playerAniManager);
         playerCombat = new PlayerCombat(this, rigid);
         playerMovement = new PlayerMovement(this, rigid);
+
+        canControl = true;
     }
 
     void Update()
     {
+        playerStemina.UpdateStemina();
+        playerCombat.Update();
+
         if (Input.GetKeyDown(KeyCode.Alpha4))
             playerHealth.TakeDamage();
 
-        if (!playerHealth.isAlive) return;
+        if (!canControl || !playerHealth.isAlive || playerCombat.isGuarding || Time.timeScale == 0) return;
 
         inputX = Input.GetAxisRaw("Horizontal");
 
         playerMovement.UpdateDir(transform, inputX);
         playerMovement.Move(inputX);
-        playerStemina.UpdateStemina();
-        playerCombat.Update();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -75,6 +79,17 @@ public class PlayerMachine : MonoBehaviour
         }
     }
 
+    private void KnockBack(Vector3 rootPos)
+    {
+        rigid.linearVelocity = Vector2.zero;
+        float knockBack_x = transform.position.x - rootPos.x > 0 ? 1 : -1;
+        float knockBack_y = Vector2.up.y*2;
+
+        transform.rotation = Quaternion.Euler(Vector3.up * (knockBack_x == -1 ? 0 : -180));
+        Vector2 knockBackDir = new Vector2(knockBack_x, knockBack_y);
+        rigid.AddForce(knockBackDir.normalized * playerData.knockBackPower, ForceMode2D.Impulse);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!playerHealth.isAlive) return;
@@ -87,13 +102,21 @@ public class PlayerMachine : MonoBehaviour
         if (collision.collider.CompareTag("Boss"))
         {
             if (playerCombat.isGuarding) playerCombat.CounterAttack(collision.gameObject.GetComponent<BossScript>());
-            else playerHealth.TakeDamage();
+            else
+            {
+                KnockBack(collision.transform.position);
+                playerHealth.TakeDamage();
+            }
         }
 
         if (collision.collider.CompareTag("BossAtk"))
         {
             if (playerCombat.isGuarding) playerCombat.CounterAttack(collision.gameObject.GetComponentInParent<BossScript>());
-            else playerHealth.TakeDamage();
+            else
+            {
+                KnockBack(collision.transform.position);
+                playerHealth.TakeDamage();
+            }
         }
     }
 
@@ -108,7 +131,11 @@ public class PlayerMachine : MonoBehaviour
             }
             else collision.gameObject.SetActive(false);
             if (playerCombat.isGuarding) playerCombat.CounterAttack(collision.gameObject.GetComponentInParent<BossScript>());
-            else playerHealth.TakeDamage();
+            else
+            {
+                KnockBack(collision.transform.position);
+                playerHealth.TakeDamage();
+            }
         }
     }
 }

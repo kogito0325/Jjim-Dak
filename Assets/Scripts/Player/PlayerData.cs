@@ -35,4 +35,6 @@ public class PlayerData : ScriptableObject
 
     [Header("Utility")]
     public float protectTime;
+    public float knockBackPower;
+    public float knockBackDurationTime;
 }

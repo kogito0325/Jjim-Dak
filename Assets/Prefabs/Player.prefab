@@ -262,7 +262,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4031916561780942801}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6b2c30c09983f147af742772bf5843e, type: 3}
   m_Name: 
@@ -283,6 +283,7 @@ MonoBehaviour:
   attackRange: {fileID: 6201668323561231852}
   healObject: {fileID: 6959646441673964542}
   guardObject: {fileID: 3638712631760954305}
+  canControl: 0
 --- !u!70 &994305524682146228
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

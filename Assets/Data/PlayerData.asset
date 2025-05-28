@@ -32,3 +32,5 @@ MonoBehaviour:
   guardCoolTime: 0.5
   counterDamage: 2
   protectTime: 1
+  knockBackPower: 80
+  knockBackDurationTime: 0.3
