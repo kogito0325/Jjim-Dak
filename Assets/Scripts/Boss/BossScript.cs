@@ -13,7 +13,7 @@ public class BossScript : MonoBehaviour
 
     private float actionBreakTime;
 
-    private int hp;
+    public int hp { get; private set; }
     private int phaseIdx;
     private int atkCount;
     
@@ -40,7 +40,7 @@ public class BossScript : MonoBehaviour
     SpriteRenderer sprRend;
 
 
-    private void Start()
+    private void Awake()
     {
         animControl = new BossAnimControl(GetComponent<Animator>());
         rigid = GetComponent<Rigidbody2D>();
@@ -197,7 +197,7 @@ public class BossScript : MonoBehaviour
         animControl.Play(BossAnimState.Die);
         gameObject.layer = LayerMask.NameToLayer("Dead");
 
-        GetComponent<BossScript>().enabled = false;
+        enabled = false;
     }
 
     private IEnumerator DeadEffect()
@@ -294,6 +294,13 @@ public class BossScript : MonoBehaviour
     private void JumpProduction()
     {
         GetComponent<Rigidbody2D>().linearVelocityX = -15f;
+    }
+
+    private void FadeOut()
+    {
+        SceneControl sceneControl = FindAnyObjectByType<SceneControl>();
+        sceneControl.GetComponent<Animator>().Play("FadeOut");
+        sceneControl.LoadScene("EndingScene", 5f);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
