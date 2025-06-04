@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PlayerCombat
 {
-
     private PlayerMachine PlayerMachine;
     private PlayerAniManager playerAni;
     private PlayerData playerData;

@@ -9,14 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2349904630349601790}
-  - component: {fileID: 1137032964267805354}
+  - component: {fileID: 2503342171752768936}
   m_Layer: 7
   m_Name: AttackRangeLeft
   m_TagString: BossAtk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2349904630349601790
 Transform:
   m_ObjectHideFlags: 0
@@ -32,8 +32,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 552703743943651502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &1137032964267805354
-PolygonCollider2D:
+--- !u!61 &2503342171752768936
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -62,11 +62,11 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.2043981, y: -0.55035233}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -76,17 +76,8 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.25, y: 0.67}
-      - {x: -1.07, y: 0.25}
-      - {x: -0.38, y: 0.09}
-      - {x: -0.46, y: -0.33}
-      - {x: -0.16, y: -0.59}
-      - {x: 0.14, y: -0.38}
-      - {x: 0.5, y: 0.1}
-      - {x: 0.16, y: 0.5}
-  m_UseDelaunayMesh: 0
+  m_Size: {x: 1.9748212, y: 2.4279418}
+  m_EdgeRadius: 0
 --- !u!1 &2954840978597219715
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +168,37 @@ PolygonCollider2D:
       - {x: -0.1805614, y: -0.06373659}
       - {x: -0.8461981, y: 1.1489975}
   m_UseDelaunayMesh: 0
+--- !u!1 &3999236649198390534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3644785712135253117}
+  m_Layer: 0
+  m_Name: JumpEffectSpot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3644785712135253117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3999236649198390534}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.23418045, y: 2.0803514, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 552703743943651502}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7075573245174699822
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +237,7 @@ Transform:
   - {fileID: 2349904630349601790}
   - {fileID: 4796776687335510745}
   - {fileID: 8762332613798553445}
+  - {fileID: 3644785712135253117}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1941492117341993116
@@ -306,19 +329,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59e83f0e0a37af8488ffd77e98db0b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 20
-  maxHp: 70
-  power: 1
+  bossData: {fileID: 11400000, guid: 348e4d8a203afbf4d861d6570c55581c, type: 2}
   lookDir: 1
-  actionTerm: 4
-  dashSpeed: 20
-  jumpPower: 25
-  phase: 2d0000001400000000000000
-  attackRange: {fileID: 2672544784913179666}
-  jumpAttackRange: {fileID: 2954840978597219715}
+  attackRange: {fileID: 2503342171752768936}
   shockPrefab: {fileID: 5541882287121239643, guid: 51e9953edb7d7234188455057f921dfd, type: 3}
   shockSpot: {fileID: 8762332613798553445}
-  hpBar: {fileID: 0}
   backGround: {fileID: 0}
   WhiteFlashMaterial: {fileID: 2100000, guid: b2ec213d6fc01e548bb18870d2e1258a, type: 2}
   Temp: {fileID: 4819451542447311810, guid: 0471df0de0019584bb269b64f25b3a46, type: 3}

@@ -39,6 +39,7 @@ public class PlayerMachine : MonoBehaviour
         playerCombat = new PlayerCombat(this, rigid);
         playerMovement = new PlayerMovement(this, rigid);
 
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
         canControl = true;
     }
 
@@ -108,32 +109,17 @@ public class PlayerMachine : MonoBehaviour
                 playerHealth.TakeDamage();
             }
         }
-
-        if (collision.collider.CompareTag("BossAtk"))
-        {
-            if (playerCombat.isGuarding) playerCombat.CounterAttack(collision.gameObject.GetComponentInParent<BossScript>());
-            else
-            {
-                KnockBack(collision.transform.position);
-                playerHealth.TakeDamage();
-            }
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("BossAtk"))
         {
-            if (collision.GetComponent<ShockScript>() != null)
-            {
-                collision.enabled = false;
-                Destroy(collision.gameObject, 5f);
-            }
-            else collision.gameObject.SetActive(false);
+            collision.enabled = false;
             if (playerCombat.isGuarding) playerCombat.CounterAttack(collision.gameObject.GetComponentInParent<BossScript>());
             else
             {
-                KnockBack(collision.transform.position);
+                KnockBack(FindAnyObjectByType<BossScript>().transform.position);
                 playerHealth.TakeDamage();
             }
         }

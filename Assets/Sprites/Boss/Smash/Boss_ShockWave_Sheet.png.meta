@@ -168,12 +168,12 @@ TextureImporter:
       name: Boss_ShockWave_Sheet_0
       rect:
         serializedVersion: 2
-        x: 239
-        y: 1667
-        width: 488
-        height: 548
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 240
+        y: 1668
+        width: 486
+        height: 546
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -190,12 +190,12 @@ TextureImporter:
       name: Boss_ShockWave_Sheet_1
       rect:
         serializedVersion: 2
-        x: 1193
-        y: 1667
-        width: 596
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1194
+        y: 1668
+        width: 594
+        height: 414
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -212,12 +212,12 @@ TextureImporter:
       name: Boss_ShockWave_Sheet_2
       rect:
         serializedVersion: 2
-        x: 2099
-        y: 1667
-        width: 596
-        height: 380
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2100
+        y: 1668
+        width: 594
+        height: 378
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -234,12 +234,12 @@ TextureImporter:
       name: Boss_ShockWave_Sheet_3
       rect:
         serializedVersion: 2
-        x: 2999
-        y: 1667
-        width: 596
-        height: 368
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3000
+        y: 1668
+        width: 594
+        height: 366
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -256,12 +256,12 @@ TextureImporter:
       name: Boss_ShockWave_Sheet_4
       rect:
         serializedVersion: 2
-        x: 3899
-        y: 1667
-        width: 596
-        height: 380
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3900
+        y: 1668
+        width: 594
+        height: 378
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -278,12 +278,12 @@ TextureImporter:
       name: Boss_ShockWave_Sheet_5
       rect:
         serializedVersion: 2
-        x: 299
-        y: 899
-        width: 596
-        height: 404
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 900
+        width: 594
+        height: 402
+      alignment: 9
+      pivot: {x: 0.2, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -300,12 +300,12 @@ TextureImporter:
       name: Boss_ShockWave_Sheet_6
       rect:
         serializedVersion: 2
-        x: 1211
-        y: 899
-        width: 584
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1212
+        y: 900
+        width: 582
+        height: 414
+      alignment: 9
+      pivot: {x: 0.19, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -322,12 +322,12 @@ TextureImporter:
       name: Boss_ShockWave_Sheet_7
       rect:
         serializedVersion: 2
-        x: 2123
-        y: 899
-        width: 560
-        height: 470
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2124
+        y: 900
+        width: 558
+        height: 468
+      alignment: 9
+      pivot: {x: 0.17, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -344,12 +344,12 @@ TextureImporter:
       name: Boss_ShockWave_Sheet_8
       rect:
         serializedVersion: 2
-        x: 2891
-        y: 899
-        width: 524
-        height: 590
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2892
+        y: 900
+        width: 522
+        height: 588
+      alignment: 9
+      pivot: {x: 0.44, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -366,12 +366,12 @@ TextureImporter:
       name: Boss_ShockWave_Sheet_9
       rect:
         serializedVersion: 2
-        x: 3605
-        y: 899
-        width: 686
-        height: 374
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3610
+        y: 900
+        width: 684
+        height: 372
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -388,12 +388,12 @@ TextureImporter:
       name: Boss_ShockWave_Sheet_10
       rect:
         serializedVersion: 2
-        x: 29
-        y: 131
-        width: 662
-        height: 380
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 30
+        y: 132
+        width: 660
+        height: 378
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -410,12 +410,12 @@ TextureImporter:
       name: Boss_ShockWave_Sheet_11
       rect:
         serializedVersion: 2
-        x: 1061
-        y: 131
-        width: 536
-        height: 488
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1062
+        y: 132
+        width: 534
+        height: 486
+      alignment: 9
+      pivot: {x: 0.46, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -432,12 +432,12 @@ TextureImporter:
       name: Boss_ShockWave_Sheet_12
       rect:
         serializedVersion: 2
-        x: 2045
-        y: 131
-        width: 458
-        height: 542
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2046
+        y: 132
+        width: 456
+        height: 540
+      alignment: 9
+      pivot: {x: 0.4, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -454,12 +454,12 @@ TextureImporter:
       name: Boss_ShockWave_Sheet_13
       rect:
         serializedVersion: 2
-        x: 2921
-        y: 131
-        width: 488
-        height: 542
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2922
+        y: 132
+        width: 486
+        height: 540
+      alignment: 9
+      pivot: {x: 0.4, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -476,7 +476,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d9333c77111308f469af2fc56419ee29
     internalID: 0
     vertices: []
     indices: 

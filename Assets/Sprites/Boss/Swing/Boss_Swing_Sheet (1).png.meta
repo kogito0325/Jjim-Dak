@@ -159,12 +159,12 @@ TextureImporter:
       name: Boss_Swing_Sheet (1)_0
       rect:
         serializedVersion: 2
-        x: 239
-        y: 1667
-        width: 488
-        height: 548
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 240
+        y: 1668
+        width: 486
+        height: 546
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: Boss_Swing_Sheet (1)_1
       rect:
         serializedVersion: 2
-        x: 1169
-        y: 1667
-        width: 584
-        height: 428
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1170
+        y: 1668
+        width: 582
+        height: 426
+      alignment: 9
+      pivot: {x: 0.345, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: Boss_Swing_Sheet (1)_2
       rect:
         serializedVersion: 2
-        x: 1967
-        y: 1667
-        width: 584
-        height: 428
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1968
+        y: 1668
+        width: 582
+        height: 426
+      alignment: 9
+      pivot: {x: 0.48, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -225,12 +225,12 @@ TextureImporter:
       name: Boss_Swing_Sheet (1)_3
       rect:
         serializedVersion: 2
-        x: 2855
-        y: 1667
-        width: 590
-        height: 398
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2856
+        y: 1668
+        width: 588
+        height: 396
+      alignment: 9
+      pivot: {x: 0.495, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -247,12 +247,12 @@ TextureImporter:
       name: Boss_Swing_Sheet (1)_4
       rect:
         serializedVersion: 2
-        x: 155
-        y: 899
-        width: 590
-        height: 392
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 156
+        y: 900
+        width: 588
+        height: 390
+      alignment: 9
+      pivot: {x: 0.495, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -269,12 +269,12 @@ TextureImporter:
       name: Boss_Swing_Sheet (1)_5
       rect:
         serializedVersion: 2
-        x: 1217
-        y: 899
-        width: 494
-        height: 392
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1218
+        y: 900
+        width: 492
+        height: 390
+      alignment: 9
+      pivot: {x: 0.227, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -291,12 +291,12 @@ TextureImporter:
       name: Boss_Swing_Sheet (1)_6
       rect:
         serializedVersion: 2
-        x: 1799
-        y: 899
-        width: 686
-        height: 374
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1800
+        y: 900
+        width: 684
+        height: 372
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -313,12 +313,12 @@ TextureImporter:
       name: Boss_Swing_Sheet (1)_7
       rect:
         serializedVersion: 2
-        x: 2963
-        y: 899
-        width: 566
-        height: 410
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2964
+        y: 900
+        width: 564
+        height: 408
+      alignment: 9
+      pivot: {x: 0.27, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -335,12 +335,12 @@ TextureImporter:
       name: Boss_Swing_Sheet (1)_8
       rect:
         serializedVersion: 2
-        x: 263
-        y: 131
-        width: 566
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 264
+        y: 132
+        width: 564
+        height: 414
+      alignment: 9
+      pivot: {x: 0.26, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -357,12 +357,12 @@ TextureImporter:
       name: Boss_Swing_Sheet (1)_9
       rect:
         serializedVersion: 2
-        x: 1163
-        y: 131
-        width: 566
-        height: 422
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1164
+        y: 132
+        width: 564
+        height: 420
+      alignment: 9
+      pivot: {x: 0.26, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -379,12 +379,12 @@ TextureImporter:
       name: Boss_Swing_Sheet (1)_10
       rect:
         serializedVersion: 2
-        x: 2063
-        y: 131
-        width: 500
-        height: 446
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2064
+        y: 132
+        width: 498
+        height: 444
+      alignment: 9
+      pivot: {x: 0.38, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -401,7 +401,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 68edc5d20a399e94785d867488533b76
     internalID: 0
     vertices: []
     indices: 

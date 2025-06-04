@@ -14,6 +14,7 @@ public class CameraScript : MonoBehaviour
     [SerializeField, Range(0.01f, 1f)] private float ShakeLittleAmount;
     [SerializeField] private float shakeTime;
     [SerializeField][Range(0.01f, 0.5f)] public float minFollowSpeed;
+    [SerializeField] private float leftEnd, rightEnd;
     
     Vector3 targetPosition;
 
@@ -29,7 +30,7 @@ public class CameraScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
         if (Time.timeScale == 0) return;
-        targetPosition = new Vector3(Mathf.Clamp(player.position.x, -6f, 6f), 0, originZ);
+        targetPosition = new Vector3(Mathf.Clamp(player.position.x, leftEnd, rightEnd), 0, originZ);
         if (curShakeTime <= 0)
         {
             float followSpeed = Mathf.Max(Time.deltaTime * Vector2.Distance(transform.position, targetPosition), minFollowSpeed);
