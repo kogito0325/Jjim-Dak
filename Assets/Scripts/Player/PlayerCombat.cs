@@ -15,7 +15,7 @@ public class PlayerCombat
     private GameObject guardObject;
     private Rigidbody2D rigid;
 
-    private float atkTimer;
+    public float atkTimer {get; set;}
     private float guardTimer;
     private float guardCoolTimer;
     private float nextAtkTime;
@@ -63,8 +63,9 @@ public class PlayerCombat
 
     public void Attack()
     {
-        if (atkTimer <= 0 && !isHealing && rigid.linearVelocity == Vector2.zero)
+        if (atkTimer <= 0 && !isHealing)
         {
+            rigid.linearVelocityX /= 2f;
             atkTimer = playerData.attackDurationTime;
             attackRange.GetComponent<Collider2D>().enabled = true;
 
@@ -72,20 +73,20 @@ public class PlayerCombat
             {
                 playerAni.Play(PlayerAnimState.ATTACK);
                 nextAtkTime = atkTimer + 0.3f;
-                playerSound.Play("Attack");
+                playerSound.Play(PlayerSoundData.AudioType.ATTACK);
             }
             else
             {
                 playerAni.Play(PlayerAnimState.ATTACK2);
                 nextAtkTime = 0f;
-                playerSound.Play("Attack2");
+                playerSound.Play(PlayerSoundData.AudioType.ATTACK2);
             }
         }
     }
 
     public void Guard()
     {
-        if (isHealing || isGuarding || rigid.linearVelocity != Vector2.zero) return;
+        if (isHealing || isGuarding) return;
         if (guardCoolTimer > 0) return;
 
         playerStemina.SpendEnergy(playerData.guardEnergy);
@@ -105,7 +106,7 @@ public class PlayerCombat
         playerHealth.TakeDamage(0);
         playerAni.Play(PlayerAnimState.COUNTER);
         playerAni.Play(GuardAnimState.COUNTER, guardObject);
-        playerSound.Play("Counter");
+        playerSound.Play(PlayerSoundData.AudioType.Counter);
         Object.FindAnyObjectByType<CameraScript>().EffectCamera();
     }
 
@@ -138,6 +139,7 @@ public class PlayerCombat
             playerStemina.SpendEnergy(playerData.healEnergy);
             playerHealth.TakeDamage(-playerData.healAmount);
             playerAni.Play(HealAnimState.HEALEND, healObject);
+            playerSound.Play(PlayerSoundData.AudioType.Heal);
             Debug.Log("Healing Success");
         }
         else

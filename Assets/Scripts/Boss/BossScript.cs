@@ -8,6 +8,7 @@ public enum Dir { Right = 1, Left = -1}
 public class BossScript : MonoBehaviour
 {
     [SerializeField] BossData bossData;
+    [SerializeField] BossSoundData soundData;
 
     public Dir lookDir;
 
@@ -38,6 +39,7 @@ public class BossScript : MonoBehaviour
     Rigidbody2D rigid;
     Transform target;
     SpriteRenderer sprRend;
+    AudioSource audioSource;
 
 
     private void Awake()
@@ -46,6 +48,7 @@ public class BossScript : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         sprRend = GetComponent<SpriteRenderer>();
         target = GameObject.FindWithTag("Player").transform;
+        audioSource = GetComponent<AudioSource>();
 
         originMaterial = sprRend.material;
 
@@ -191,6 +194,8 @@ public class BossScript : MonoBehaviour
 
     private void Die()
     {
+        Instantiate(groggyEffect, transform.position + Vector3.up, Quaternion.identity);
+
         StopPattern();
         StartCoroutine(DeadEffect());
 
@@ -286,9 +291,9 @@ public class BossScript : MonoBehaviour
         LockOn();
     }
 
-    private void PlaySound()
+    private void PlaySound(BossSoundData.AudioType audio)
     {
-        GetComponent<AudioSource>().Play();
+        audioSource.PlayOneShot(soundData.audioClips[(int)audio]);
     }
 
     private void JumpProduction()
@@ -313,7 +318,7 @@ public class BossScript : MonoBehaviour
                 collision.GetComponentInParent<PlayerMachine>().playerData.attackHealEnergyAmount);
             collision.GetComponent<Collider2D>().enabled = false;
             FindAnyObjectByType<CameraScript>().ShakeLittleCamera(0.2f);
-            collision.GetComponentInParent<PlayerMachine>().playerSoundManager.Play("Hit");
+            collision.GetComponentInParent<PlayerMachine>().playerSoundManager.Play(PlayerSoundData.AudioType.Hit);
 
             Instantiate(groundEffect, transform.position + Vector3.up, Quaternion.identity);
         }

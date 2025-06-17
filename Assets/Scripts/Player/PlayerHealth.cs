@@ -31,6 +31,7 @@ public class PlayerHealth
         // 데미지를 입었을 때
         if (damage > 0)
         {
+            playerMachine.playerSoundManager.Play(PlayerSoundData.AudioType.PlayerHit);
             Object.FindAnyObjectByType<CameraScript>().ShakeCamera();
             hearts[hp].GetComponent<Animator>().Play($"Disappear{hp}");
             playerMachine.StartCoroutine(ProtectState(true));
@@ -64,12 +65,11 @@ public class PlayerHealth
         {
             if (playerData.protectTime - blinkTimer >= playerData.knockBackDurationTime)
                 playerMachine.canControl = true;
-            if(isDamaged) Blink();
+            if (isDamaged) Blink();
             yield return new WaitForSeconds(0.12f);
             blinkTimer -= 0.12f;
         }
         playerMachine.GetComponent<SpriteRenderer>().color = Color.white;
-
         if (isAlive)
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
     }

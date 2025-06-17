@@ -3,7 +3,9 @@ using UnityEngine.UI;
 
 public class PlayerMachine : MonoBehaviour
 {
+    [Header("Player Datas")]
     public PlayerData playerData;
+    public PlayerSoundData PlayerSoundData;
 
     public PlayerMovement playerMovement;
     public PlayerCombat playerCombat;
@@ -16,9 +18,9 @@ public class PlayerMachine : MonoBehaviour
     private Animator animator;
     private AudioSource audioSource;
 
+    [Header("\nDynamic Allocation")]
     public Image energySprite;
     public Image[] hearts;
-    public AudioClip[] audioClips;
     public GameObject attackRange;
     public GameObject healObject;
     public GameObject guardObject;
@@ -33,7 +35,7 @@ public class PlayerMachine : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         playerAniManager = new PlayerAniManager(animator);
-        playerSoundManager = new PlayerSoundManager(audioClips, audioSource);
+        playerSoundManager = new PlayerSoundManager(PlayerSoundData, audioSource);
         playerStemina = new PlayerStemina(playerData, energySprite);
         playerHealth = new PlayerHealth(this, playerAniManager);
         playerCombat = new PlayerCombat(this, rigid);
@@ -48,25 +50,26 @@ public class PlayerMachine : MonoBehaviour
         playerStemina.UpdateStemina();
         playerCombat.Update();
 
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-            playerHealth.TakeDamage();
-
         if (!canControl || !playerHealth.isAlive || playerCombat.isGuarding || Time.timeScale == 0) return;
 
         inputX = Input.GetAxisRaw("Horizontal");
 
         playerMovement.UpdateDir(transform, inputX);
-        playerMovement.Move(inputX);
+        if (playerCombat.atkTimer <= 0)
+        {
+            playerMovement.Move(inputX);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             playerMovement.Jump();
+            playerCombat.atkTimer = 0f;
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && playerStemina.CheckEnergy(playerData.dashEnergy))
         {
             playerMovement.Dash(transform);
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !playerMovement.isDashing)
         {
             playerCombat.Attack();
         }
@@ -90,6 +93,12 @@ public class PlayerMachine : MonoBehaviour
         Vector2 knockBackDir = new Vector2(knockBack_x, knockBack_y);
         rigid.AddForce(knockBackDir.normalized * playerData.knockBackPower, ForceMode2D.Impulse);
     }
+
+    private void PlaySound(PlayerSoundData.AudioType audioType)
+    {
+        playerSoundManager.Play(audioType);
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

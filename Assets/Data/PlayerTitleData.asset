@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f823ea4d2268d24b849e045e3129320, type: 3}
+  m_Name: PlayerTitleData
+  m_EditorClassIdentifier: 
+  maxHp: 5
+  maxEnergy: 60
+  energyHealAmount: 1
+  speed: 7
+  jumpPower: 18
+  attackDurationTime: 0.5
+  attackHealEnergyAmount: 4
+  dashSpeed: 25
+  dashEnergy: 0
+  dashDurationTime: 0.25
+  dashCoolTime: 0.5
+  healAmount: 1
+  healEnergy: 0
+  healTime: 1
+  guardEnergy: 0
+  guardDurationTime: 0.2
+  guardHealEnergyAmount: 10
+  guardCoolTime: 0.5
+  counterDamage: 2
+  protectTime: 1
+  knockBackPower: 80
+  knockBackDurationTime: 0.3
